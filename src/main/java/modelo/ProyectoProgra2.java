@@ -12,6 +12,7 @@ public class ProyectoProgra2 {
         int b=7;
         int suma =0;
         suma = a+b;
-                
+        
+        // Comentario para probar el github con David
     }
 }
