@@ -13,7 +13,7 @@ public class Usuario {
  private String Nombre;  
  private String email;
  private String password;
- int FechaRegistro;
+ private int FechaRegistro;
  
  //constructor con parametros
     public Usuario(int IDusuario, String Nombre, String email, String password,  int FechaRegistro) {
@@ -67,7 +67,5 @@ public class Usuario {
     public void setFechaRegistro(int FechaRegistro) {
         this.FechaRegistro = FechaRegistro;
     }
-    
-    
-    
+   
 }
