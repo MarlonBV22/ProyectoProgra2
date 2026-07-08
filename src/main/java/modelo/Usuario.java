@@ -1,71 +1,65 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package modelo;
 
-/**
- *
- * @author David Cruz
- */
+
 public class Usuario {
- private int IDusuario;
- private String Nombre;  
+ private int idUsuario;
+ private String nombre;  
  private String email;
  private String password;
- private int FechaRegistro;
+ private int fechaRegistro;
  
  //constructor con parametros
-    public Usuario(int IDusuario, String Nombre, String email, String password,  int FechaRegistro) {
-        this.IDusuario = IDusuario;
-        this.Nombre = Nombre;
-        this.email = email;
-        this.password = password;
-        this.FechaRegistro = FechaRegistro;
+    public Usuario(int idUsuarioP, String nombreP, String emailP, String passwordP, int fechaRegistroP) {
+        this.idUsuario = idUsuarioP;
+        this.nombre = nombreP;
+        this.email = emailP;
+        this.password = passwordP;
+        this.fechaRegistro = fechaRegistroP;
     }
 // contructor sin paramatros 
     public Usuario() {
         
     }
 // CREACION DE GET Y SET
-    public int getIDusuario() {
-        return IDusuario;
+    public int getidUsuario() {
+        return idUsuario;
     }
 
-    public void setIDusuario(int IDusuario) {
-        this.IDusuario = IDusuario;
+    public void setIDusuario(int idUsuarioP) {
+        this.idUsuario = idUsuarioP;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombreP) {
+        this.nombre = nombreP;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String emailP) {
+        this.email = emailP;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String passwordP) {
+        this.password = passwordP;
     }
 
     public int getFechaRegistro() {
-        return FechaRegistro;
+        return fechaRegistro;
     }
 
-    public void setFechaRegistro(int FechaRegistro) {
-        this.FechaRegistro = FechaRegistro;
+    public void setFechaRegistro(int fechaRegistroP) {
+        this.fechaRegistro = fechaRegistroP;
     }
    
 }
