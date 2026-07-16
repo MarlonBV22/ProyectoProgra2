@@ -17,7 +17,7 @@ public class Estudiante extends Usuario {
     public Estudiante() {
     }
 
-    // Constructor con parámetros
+    // Constructor con parametros
     public Estudiante(String carrera, String carnet) {
         this.carrera = carrera;
         this.carnet = carnet;
