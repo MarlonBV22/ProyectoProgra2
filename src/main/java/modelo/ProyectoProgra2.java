@@ -14,7 +14,7 @@ public class ProyectoProgra2 {
         System.out.println("Digite su correo");
         String correo = sc.nextLine();
         
-        if(correo.contains("@")){
+        if(correo.contains("@") || correo.contains(".com")){
             System.out.println("correo valido");
         }else{
             System.out.println("correo invaalido ");  
@@ -35,7 +35,7 @@ public class ProyectoProgra2 {
             System.out.println("No se permite letras");   
         }
         
-        //valida que no digite letras
+        //valida que no digite numeros
          try {
             System.out.println("Digite su nombre:");
             String nombre = sc.nextLine();

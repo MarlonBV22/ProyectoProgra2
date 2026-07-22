@@ -9,7 +9,7 @@ package modelo;
  * @author jorge.villafuerte
  */
 public class Estudiante extends Usuario {
-
+      //cambiar los atributos
     private String carrera;
     private String carnet;
 

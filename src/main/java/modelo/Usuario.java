@@ -2,12 +2,12 @@
 package modelo;
 
 
-public class Usuario {
+public abstract class Usuario {
  private int idUsuario;
  private String nombre;  
  private String email;
  private String password;
- private int fechaRegistro;
+
  
 //constructor con parametros
     public Usuario(int idUsuario, String nombre, String email, String password, int fechaRegistro) {
@@ -15,12 +15,14 @@ public class Usuario {
         this.nombre = nombre;
         this.email = email;
         this.password = password;
-        this.fechaRegistro = fechaRegistro;
+       
     }
 // contructor sin paramatros 
     public Usuario() {
         
     }
+    //lleva un metodo rol??
+    
 // CREACION DE GET Y SET
     public int getidUsuario() {
         return idUsuario;
@@ -53,13 +55,5 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public int getFechaRegistro() {
-        return fechaRegistro;
-    }
-
-    public void setFechaRegistro(int fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
-    }
-   
 }
+
