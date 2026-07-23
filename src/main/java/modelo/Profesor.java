@@ -5,7 +5,7 @@ import java.time.LocalDateTime; // Importación necesaria para el TIMESTAMP
 public class Profesor extends Usuario {
     
        //construcor con paramatros
-     public Profesor(int idUsuario, 
+    public Profesor(int idUsuario, 
             String nombre, 
             String email,
             String password, 
@@ -14,7 +14,7 @@ public class Profesor extends Usuario {
         super(idUsuario, nombre, email, password, "PROFESOR" ,fechaRegistro);
     }
      
-        //constructor sin parametros
-     public Profesor(){
-       }
+    //constructor sin parametros
+    public Profesor(){
     }
+}
