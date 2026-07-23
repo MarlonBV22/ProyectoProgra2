@@ -1,6 +1,6 @@
 
 package modelo;
-
+import java.time.LocalDateTime; // Importación necesaria para el TIMESTAMP
 
 public class Profesor extends Usuario {
     
@@ -9,9 +9,9 @@ public class Profesor extends Usuario {
             String nombre, 
             String email,
             String password, 
-            int fechaRegistro) {
+            LocalDateTime fechaRegistro) {
         
-        super(idUsuario, nombre, email, password, fechaRegistro);
+        super(idUsuario, nombre, email, password, "PROFESOR" ,fechaRegistro);
     }
      
         //constructor sin parametros
