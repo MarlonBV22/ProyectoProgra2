@@ -1,9 +1,5 @@
-package modelo.ClasesDAO;
 
-/**
- *
- * @author Jorge Villafuerte
- */
+package modelo.ClasesDAO;
 
 import java.sql.Connection;
 import java.sql.Date;

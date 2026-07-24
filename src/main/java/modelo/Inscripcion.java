@@ -1,47 +1,42 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package modelo;
 import java.time.LocalDate;
 
-/**
- *
- * @author David Cruz
- */
+
 public class Inscripcion {
     
-    private int idIncripcion;
-    private int idEstudnainte;
+    private int idInscripcion;
+    private int idEstudiante;
     private int idCurso;
-    private LocalDate fechaIncrpcion;
+    private LocalDate fechaInscripcion;
     //contructor sin parametros
+    
     public Inscripcion(){
         
     }
      //constructor con parametros
-    public Inscripcion(int idIncripcion, int idEstudnainte, int idCurso, LocalDate fechaIncrpcion) {
-        this.idIncripcion = idIncripcion;
-        this.idEstudnainte = idEstudnainte;
+    public Inscripcion(int idInscripcion, int idEstudiante, int idCurso, LocalDate fechaInscripcion) {
+        this.idInscripcion = idInscripcion;
+        this.idEstudiante = idEstudiante;
         this.idCurso = idCurso;
-        this.fechaIncrpcion = fechaIncrpcion;
+        this.fechaInscripcion = fechaInscripcion;
     }
     //get y set
 
-    public int getIdIncripcion() {
-        return idIncripcion;
+    public int getIdInscripcion() {
+        return idInscripcion;
     }
 
-    public void setIdIncripcion(int idIncripcion) {
-        this.idIncripcion = idIncripcion;
+    public void setIdInscripcion(int idInscripcion) {
+        this.idInscripcion = idInscripcion;
     }
 
-    public int getIdEstudnainte() {
-        return idEstudnainte;
+    public int getIdEstudiante() {
+        return idEstudiante;
     }
 
-    public void setIdEstudnainte(int idEstudnainte) {
-        this.idEstudnainte = idEstudnainte;
+    public void setIdEstudiante(int idEstudiante) {
+        this.idEstudiante = idEstudiante;
     }
 
     public int getIdCurso() {
@@ -52,12 +47,12 @@ public class Inscripcion {
         this.idCurso = idCurso;
     }
 
-    public LocalDate getFechaIncrpcion() {
-        return fechaIncrpcion;
+    public LocalDate getFechaInscripcion() {
+        return fechaInscripcion;
     }
 
-    public void setFechaIncrpcion(LocalDate fechaIncrpcion) {
-        this.fechaIncrpcion = fechaIncrpcion;
+    public void setFechaInscripcion(LocalDate fechaInscripcion) {
+        this.fechaInscripcion = fechaInscripcion;
     }
       
 }

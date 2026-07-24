@@ -1,11 +1,5 @@
+
 package modelo.ClasesDAO;
-
-/**
- *
- * @author Jorge Villafuerte
- */
-
-
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
