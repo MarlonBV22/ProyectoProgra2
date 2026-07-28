@@ -16,13 +16,13 @@ public class UsuarioDAO {
     public Usuario validarLogin(String email, String password) {
     String sql = "SELECT * FROM usuarios WHERE email = ? AND password = ?";
     
-    try (Connection conn = Conexion.getConexion();
-         PreparedStatement ps = conn.prepareStatement(sql)) {
+    try (Connection con = Conexion.getConexion();
+         PreparedStatement ps = con.prepareStatement(sql)) {// envia datos a la base de SQL HACE LA PREGUNTA
         
-        ps.setString(1, email);
+        ps.setString(1, email);//1 resive el primer ? 
         ps.setString(2, password);
         
-        try (ResultSet rs = ps.executeQuery()) {
+        try (ResultSet rs = ps.executeQuery()) { //se trae y guarda el resultado
             if (rs.next()) {         
                 int id = rs.getInt("id_usuario");
                 String nombre = rs.getString("nombre");
