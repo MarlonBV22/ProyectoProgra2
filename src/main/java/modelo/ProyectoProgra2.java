@@ -1,57 +1,28 @@
 
-
 package modelo;
 
-import java.util.Scanner;
+import modelo.ClasesDAO.UsuarioDAO;
+import modelo.Controlador.LoginController;
+import modelo.vistas.visorLoggin;
 
 
 public class ProyectoProgra2 {
 
     public static void main(String[] args) {
-       // valida que contenga @
-        Scanner sc = new Scanner(System.in );
-        try{
-        System.out.println("Digite su correo");
-        String correo = sc.nextLine();
+        // 1. Instanciamos la Vista (el JFrame diseñado por tu compañero)
+        visorLoggin pantallaLogin = new visorLoggin();
         
-        if(correo.contains("@") || correo.contains(".com")){
-            System.out.println("correo valido");
-        }else{
-            System.out.println("correo invaalido ");  
-        }
-           
-        }catch(Exception e){
-            System.out.println("");
-        }
+        // 2. Instanciamos el Modelo DAO (el acceso a datos que tú programaste)
+        UsuarioDAO daoUsuario = new UsuarioDAO();
         
-        //valida que no dijite letras 
-        try{
-        System.out.println("Digite su edad");
-        String edad = sc.nextLine();
-        Integer.parseInt(edad);
-            System.out.println(edad);
+        // 3. Instanciamos el Controlador amarrando la vista y el DAO
+        // El constructor del controlador se encargará de activar los botones automáticamente
+        LoginController controlador = new LoginController(pantallaLogin, daoUsuario);
         
-        }catch(Exception e){
-            System.out.println("No se permite letras");   
-        }
+        // 4. Centramos la pantalla en el monitor del usuario (buena práctica visual)
+        pantallaLogin.setLocationRelativeTo(null);
         
-        //valida que no digite numeros
-         try {
-            System.out.println("Digite su nombre:");
-            String nombre = sc.nextLine();
-
-            for (int i = 0; i < nombre.length(); i++) {
-                char letra = nombre.charAt(i);
-                
-                if (!Character.isLetter(letra)) {
-                    throw new Exception("El nombre solo puede contener letras");
-                }
-            }
-
-            System.out.println("Nombre valido.");
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        // 5. Hacemos visible la interfaz gráfica
+        pantallaLogin.setVisible(true);
     }
 } 
