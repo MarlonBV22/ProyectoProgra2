@@ -34,6 +34,7 @@ public class LoginController implements ActionListener {
         if (e.getSource() == vista.btnCerrar) {
             System.exit(0);
         }
+        
 
         // ACCIÓN 2: Si se presiona el botón "Ingresar" (amarillo)
         if (e.getSource() == vista.btnIngresar) {

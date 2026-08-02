@@ -1,4 +1,7 @@
 package modelo.vistas;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Brandon Ortiz
@@ -140,7 +143,7 @@ public class visorLoggin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
-        // Metodo para finalisar la ejecucion del programa
+   
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
