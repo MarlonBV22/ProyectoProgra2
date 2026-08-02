@@ -1,5 +1,8 @@
 
 package modelo.vistas;
+
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author Brandon Ortiz
@@ -21,37 +24,34 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botonCursos = new javax.swing.JButton();
-        botonInscripciones = new javax.swing.JButton();
+        btnCursos = new javax.swing.JButton();
+        btnInscripciones = new javax.swing.JButton();
         botonLoggin = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        botonAministradorUsuarios = new javax.swing.JToggleButton();
+        btnAministradorUsuarios = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        botonCursos.setBackground(new java.awt.Color(153, 255, 255));
-        botonCursos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        botonCursos.setForeground(new java.awt.Color(0, 0, 0));
-        botonCursos.setText("Cursos");
-        botonCursos.addActionListener(new java.awt.event.ActionListener() {
+        btnCursos.setBackground(new java.awt.Color(153, 255, 255));
+        btnCursos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnCursos.setText("Cursos");
+        btnCursos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCursosActionPerformed(evt);
+                btnCursosActionPerformed(evt);
             }
         });
 
-        botonInscripciones.setBackground(new java.awt.Color(255, 51, 255));
-        botonInscripciones.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        botonInscripciones.setForeground(new java.awt.Color(0, 0, 0));
-        botonInscripciones.setText("Inscripciones");
-        botonInscripciones.addActionListener(new java.awt.event.ActionListener() {
+        btnInscripciones.setBackground(new java.awt.Color(255, 51, 255));
+        btnInscripciones.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnInscripciones.setText("Inscripciones");
+        btnInscripciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonInscripcionesActionPerformed(evt);
+                btnInscripcionesActionPerformed(evt);
             }
         });
 
         botonLoggin.setBackground(new java.awt.Color(255, 204, 204));
         botonLoggin.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        botonLoggin.setForeground(new java.awt.Color(0, 0, 0));
         botonLoggin.setText("Regresar al inicio");
         botonLoggin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,13 +62,12 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("¿A cual desea ingresar?");
 
-        botonAministradorUsuarios.setBackground(new java.awt.Color(102, 255, 102));
-        botonAministradorUsuarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        botonAministradorUsuarios.setForeground(new java.awt.Color(0, 0, 0));
-        botonAministradorUsuarios.setText("Administrador de Usuarios");
-        botonAministradorUsuarios.addActionListener(new java.awt.event.ActionListener() {
+        btnAministradorUsuarios.setBackground(new java.awt.Color(102, 255, 102));
+        btnAministradorUsuarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnAministradorUsuarios.setText("Administrador de Usuarios");
+        btnAministradorUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAministradorUsuariosActionPerformed(evt);
+                btnAministradorUsuariosActionPerformed(evt);
             }
         });
 
@@ -79,11 +78,11 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(botonCursos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCursos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botonAministradorUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAministradorUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonLoggin, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(26, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -98,11 +97,11 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(botonAministradorUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonCursos, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
+                    .addComponent(btnAministradorUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCursos, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonLoggin, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(171, 171, 171))
         );
@@ -110,26 +109,26 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonCursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCursosActionPerformed
+    private void btnCursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCursosActionPerformed
                             //metodo para redirigir a la pantalla de cursos
                                  //visorOpcionesProfesor----------->visorCursos
        
-    }//GEN-LAST:event_botonCursosActionPerformed
+    }//GEN-LAST:event_btnCursosActionPerformed
 
-    private void botonInscripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInscripcionesActionPerformed
+    private void btnInscripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscripcionesActionPerformed
         // Metodo para redirigir a la pantalla de inscripcion
         //visorOpcionesProfesor----------->visorTablaInscripcion
-    }//GEN-LAST:event_botonInscripcionesActionPerformed
+    }//GEN-LAST:event_btnInscripcionesActionPerformed
 
     private void botonLogginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLogginActionPerformed
         //Metodo para redirigir a la pantalla del loggin
         //visorOpcionesProfesor---------->visorLoggin
     }//GEN-LAST:event_botonLogginActionPerformed
 
-    private void botonAministradorUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAministradorUsuariosActionPerformed
+    private void btnAministradorUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAministradorUsuariosActionPerformed
         // Boton para redirigir al administrador de usuarios
         //----------------------visorCreacionUsuarios
-    }//GEN-LAST:event_botonAministradorUsuariosActionPerformed
+    }//GEN-LAST:event_btnAministradorUsuariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,10 +166,22 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton botonAministradorUsuarios;
-    private javax.swing.JButton botonCursos;
-    private javax.swing.JButton botonInscripciones;
     private javax.swing.JButton botonLoggin;
+    private javax.swing.JToggleButton btnAministradorUsuarios;
+    private javax.swing.JButton btnCursos;
+    private javax.swing.JButton btnInscripciones;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+  // se crea getts por que son privados y se ocupan en el controlador
+    public javax.swing.JButton getbtnInscripciones() {
+    return btnInscripciones;
+}
+
+public JToggleButton getbtnAministradorUsuarios() {
+    return btnAministradorUsuarios;
+}
+
+public javax.swing.JButton getbtnCursos(){
+    return  btnCursos;
+}
 }

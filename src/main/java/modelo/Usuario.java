@@ -24,7 +24,7 @@ public abstract class Usuario {
     public Usuario() {
         
     }
-     //pruba de borra
+    
 // CREACION DE GET Y SET
     public int getidUsuario() {
         return idUsuario;
