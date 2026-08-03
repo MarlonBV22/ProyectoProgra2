@@ -30,13 +30,13 @@ public class LoginController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        // ACCIÓN 1: Si se presiona el botón "Cerrar programa" (rojo)
+        // ACCIÓN 1: Si se presiona el botón "Cerrar programa"
         if (e.getSource() == vista.btnCerrar) {
             System.exit(0);
         }
         
 
-        // ACCIÓN 2: Si se presiona el botón "Ingresar" (amarillo)
+        // ACCIÓN 2: Si se presiona el botón "Ingresar"
         if (e.getSource() == vista.btnIngresar) {
             
             // 1. Capturamos los datos ingresados en la interfaz gráfica

@@ -17,12 +17,12 @@ public class UsuarioDAO {
     String sql = "SELECT * FROM usuarios WHERE email = ? AND password = ?";
     
     try (Connection con = Conexion.getConexion();
-         PreparedStatement ps = con.prepareStatement(sql)) {// envia datos a la base de SQL HACE LA PREGUNTA
+         PreparedStatement ps = con.prepareStatement(sql)) { // envia datos a la base de SQL
         
-        ps.setString(1, email);//1 resive el primer ? 
+        ps.setString(1, email); // 1 recibe el primer ? 
         ps.setString(2, password);
         
-        try (ResultSet rs = ps.executeQuery()) { //se trae y guarda el resultado
+        try (ResultSet rs = ps.executeQuery()) { // Trae y guarda el resultado
             if (rs.next()) {         
                 int id = rs.getInt("id_usuario");
                 String nombre = rs.getString("nombre");
@@ -32,7 +32,7 @@ public class UsuarioDAO {
                 
                 // Aplicamos polimorfismo según el rol guardado en MySQL
                 if ("ESTUDIANTE".equalsIgnoreCase(rol)) {
-                    // Retornamos un Estudiante, pero viaja "disfrazado" de Usuario (Polimorfismo)
+                    // Retornamos un Estudiante, pero viaja "disfrazado" de Usuario
                     return new Estudiante(id, nombre, email, password, fechaReg);
                 } else if ("PROFESOR".equalsIgnoreCase(rol)) {
                     // Retornamos un Profesor

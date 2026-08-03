@@ -9,20 +9,20 @@ import modelo.vistas.VistaLogin;
 public class ProyectoProgra2 {
 
     public static void main(String[] args) {
-        // 1. Instanciamos la Vista (el JFrame diseñado por tu compañero)
+        // 1. Se instancia la vista
         VistaLogin pantallaLogin = new VistaLogin();
         
-        // 2. Instanciamos el Modelo DAO (el acceso a datos que tú programaste)
+        // 2. Se instancia el Modelo DAO
         UsuarioDAO daoUsuario = new UsuarioDAO();
         
-        // 3. Instanciamos el Controlador amarrando la vista y el DAO
+        // 3. Se instancia el Controlador amarrando la vista y el DAO
         // El constructor del controlador se encargará de activar los botones automáticamente
         LoginController controlador = new LoginController(pantallaLogin, daoUsuario);
         
-        // 4. Centramos la pantalla en el monitor del usuario (buena práctica visual)
+        // 4. Centra la pantalla en el monitor del usuario
         pantallaLogin.setLocationRelativeTo(null);
         
-        // 5. Hacemos visible la interfaz gráfica
+        // 5. Hace visible la interfaz gráfica
         pantallaLogin.setVisible(true);
     }
 } 
