@@ -28,7 +28,7 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
         btnInscripciones = new javax.swing.JButton();
         botonLoggin = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnAministradorUsuarios = new javax.swing.JToggleButton();
+        btnAdministradorUsuarios = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,12 +62,12 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("¿A cual desea ingresar?");
 
-        btnAministradorUsuarios.setBackground(new java.awt.Color(102, 255, 102));
-        btnAministradorUsuarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnAministradorUsuarios.setText("Administrador de Usuarios");
-        btnAministradorUsuarios.addActionListener(new java.awt.event.ActionListener() {
+        btnAdministradorUsuarios.setBackground(new java.awt.Color(102, 255, 102));
+        btnAdministradorUsuarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnAdministradorUsuarios.setText("Administrador de Usuarios");
+        btnAdministradorUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAministradorUsuariosActionPerformed(evt);
+                btnAdministradorUsuariosActionPerformed(evt);
             }
         });
 
@@ -82,7 +82,7 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
                     .addComponent(btnInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAministradorUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdministradorUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonLoggin, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(26, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -97,7 +97,7 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnAministradorUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAdministradorUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCursos, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -125,10 +125,10 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
         //visorOpcionesProfesor---------->visorLoggin
     }//GEN-LAST:event_botonLogginActionPerformed
 
-    private void btnAministradorUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAministradorUsuariosActionPerformed
+    private void btnAdministradorUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministradorUsuariosActionPerformed
         // Boton para redirigir al administrador de usuarios
         //----------------------visorCreacionUsuarios
-    }//GEN-LAST:event_btnAministradorUsuariosActionPerformed
+    }//GEN-LAST:event_btnAdministradorUsuariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,7 +167,7 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonLoggin;
-    private javax.swing.JToggleButton btnAministradorUsuarios;
+    private javax.swing.JToggleButton btnAdministradorUsuarios;
     private javax.swing.JButton btnCursos;
     private javax.swing.JButton btnInscripciones;
     private javax.swing.JLabel jLabel1;
@@ -177,8 +177,8 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
     return btnInscripciones;
 }
 
-public JToggleButton getbtnAministradorUsuarios() {
-    return btnAministradorUsuarios;
+public JToggleButton getbtnAdministradorUsuarios() {
+    return btnAdministradorUsuarios;
 }
 
 public javax.swing.JButton getbtnCursos(){

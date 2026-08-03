@@ -29,7 +29,7 @@ public class OpcionesProfesorController implements ActionListener {
         //conecta los botones
         vista.getbtnCursos().addActionListener(this);
         vista.getbtnInscripciones().addActionListener(this);
-        vista.getbtnAministradorUsuarios().addActionListener(this);
+        vista.getbtnAdministradorUsuarios().addActionListener(this);
     }
 
     @Override
@@ -53,13 +53,18 @@ public class OpcionesProfesorController implements ActionListener {
             vista.dispose();
         }
            //pregunta
-        if (e.getSource() == vista.getbtnAministradorUsuarios()) {
+        if (e.getSource() == vista.getbtnAdministradorUsuarios()) {
             // crea
-            visorLoggin login =
-                    new visorLoggin();
+             visiorOpcionesProfesor vista = new visiorOpcionesProfesor();
+               OpcionesProfesorController controlador =
+                   new OpcionesProfesorController(vista);
+
+                           vista.setVisible(true);
+            /*visorLoggin login =
+                   new visorLoggin();
 
             login.setVisible(true);
-            vista.dispose();
-        }
+            vista.dispose(); */
+       }
     }
 }
