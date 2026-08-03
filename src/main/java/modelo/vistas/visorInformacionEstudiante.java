@@ -1,5 +1,10 @@
 
 package modelo.vistas;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
+//import javax.swing.JScrollPane;
+//import java.awt.*;
+//import java.util.ArrayList;
 
 /**
  *
@@ -8,7 +13,7 @@ package modelo.vistas;
  */
 public class visorInformacionEstudiante extends javax.swing.JFrame {
 
-    
+     
     public visorInformacionEstudiante() {
         initComponents();
     }
@@ -48,11 +53,7 @@ public class visorInformacionEstudiante extends javax.swing.JFrame {
 
         TablaVisorDeCursosEstudiante.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Curso", "ID", "Profesor", "Descripcion"
@@ -77,12 +78,6 @@ public class visorInformacionEstudiante extends javax.swing.JFrame {
         jLabel4.setText("Contraseña");
 
         jLabel5.setText("Fecha de registro");
-
-        verCorreoEstudiante.setText("*correo*");
-
-        verContraseñaEstudiante.setText("debate de incluir eso");
-
-        verFechaRegistroEstudiante.setText("11/9/2013");
 
         jLabel6.setText("*solo vista, nada de modificacion*");
 
@@ -161,14 +156,46 @@ public class visorInformacionEstudiante extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonVisorDeCrusosEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVisorDeCrusosEstudiantesActionPerformed
-        // Boton para imprimir la informacion relacionada al estudiante que ha logeado
+       //base para agregar ""1"" fila a la tabla
+       String hola="1";
+        //String[] linea1 = {hola,hola,hola,hola};
+        //String[] linea2 = {hola,hola,hola,hola};
+        String[] linea1 = {hola};
+         String[] linea2 = {hola};
+          String[] linea3 = {hola};
+           String[] linea4 = {hola};
+       // String[] linea3 = {"1", "2", "3","4"};
+        //String[] linea4 = {"1", "2", "3","4"};
+        String[][] linea = {linea1};
+   
         
+        
+        DefaultTableModel tablon = (DefaultTableModel)TablaVisorDeCursosEstudiante.getModel();
+        tablon.addRow(linea);
+        //tablon.insertRow(tablon.getRowCount(),linea);
+        //tablon.addRow(new Object[]{linea1, linea2,linea3,linea4});
+         //tablon.insertRow(0, new Object[] {linea1, linea2,linea3,linea4});
+       tablon.insertRow(tablon.getRowCount(), new Object[][] {linea1, linea2,linea3,linea4});
+        
+       //espacio para importar la informacion de la base de datos
+       
+       //
+         verNombreEstudiante.setText("Pepito");
+         verCorreoEstudiante.setText("qyehdbhsd127845@Gmail");
+         verContraseñaEstudiante.setText("12345");
+         verFechaRegistroEstudiante.setText("9/11/2001");
+         JOptionPane.showMessageDialog(this,linea);
+       //  TablaVisorDeCursosEstudiante 
         //no hay espacio para errores de parte del usuario, literal es solo un boton
     }//GEN-LAST:event_botonVisorDeCrusosEstudiantesActionPerformed
 
     private void botonRegresoLogginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresoLogginActionPerformed
         // Boton para regresar al menu de loggeo
         //visorInformacionEstudiante-------->visorLoggin
+        visorLoggin pantalla =new visorLoggin();
+        pantalla.setVisible(true);
+        dispose();
+        setVisible(false);
     }//GEN-LAST:event_botonRegresoLogginActionPerformed
 
     /**

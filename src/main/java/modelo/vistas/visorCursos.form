@@ -27,42 +27,44 @@
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="descripcionCurso" alignment="0" min="-2" pref="434" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel4" min="-2" pref="107" max="-2" attributes="0"/>
-                                      <Component id="jTextField1" min="-2" pref="156" max="-2" attributes="0"/>
-                                      <Component id="jLabel5" alignment="0" min="-2" pref="139" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel4" min="-2" pref="107" max="-2" attributes="0"/>
+                                  <Component id="nombreCurso" min="-2" pref="156" max="-2" attributes="0"/>
+                                  <Component id="jLabel5" alignment="0" min="-2" pref="139" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="idCurso" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel6" min="-2" pref="107" max="-2" attributes="0"/>
-                                      <Component id="jTextField3" min="-2" pref="118" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace pref="196" max="32767" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="idCurso" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel6" min="-2" pref="107" max="-2" attributes="0"/>
+                                  <Component id="idProfesor" min="-2" pref="118" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="125" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="botonCreacionCurso" min="-2" pref="91" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="botonEditar" min="-2" pref="91" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="botonEliminarCurso" min="-2" pref="138" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="descripcionCurso" alignment="0" min="-2" pref="434" max="-2" attributes="0"/>
                           <Component id="botonRegresoMenu" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="36" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="botonEditar" min="-2" pref="91" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="botonCreacionCurso" min="-2" pref="91" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="botonEliminarCurso" min="-2" pref="81" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -86,7 +88,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+                      <Component id="nombreCurso" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel3" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
@@ -95,7 +97,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="idCurso" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="jTextField3" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="idProfesor" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
@@ -103,9 +105,9 @@
                       <Component id="descripcionCurso" min="-2" pref="92" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="botonEditar" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
                           <Component id="botonCreacionCurso" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                           <Component id="botonEliminarCurso" alignment="3" min="-2" pref="67" max="-2" attributes="0"/>
+                          <Component id="botonEditar" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="botonRegresoMenu" min="-2" pref="69" max="-2" attributes="0"/>
@@ -161,7 +163,7 @@
         <Property name="text" type="java.lang.String" value="Nombre de curso"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="nombreCurso">
       <Properties>
         <Property name="text" type="java.lang.String" value="Catalan 5*"/>
       </Properties>
@@ -181,7 +183,7 @@
         <Property name="text" type="java.lang.String" value="ID del profesor"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="idProfesor">
       <Properties>
         <Property name="text" type="java.lang.String" value="34736*"/>
       </Properties>
@@ -226,11 +228,19 @@
         <Component class="javax.swing.JTable" name="tablaCursos">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
-                <Column editable="true" title="Curso" type="java.lang.Object"/>
-                <Column editable="true" title="ID" type="java.lang.Object"/>
-                <Column editable="true" title="descripcion" type="java.lang.Object"/>
-                <Column editable="true" title="ID profesor" type="java.lang.Object"/>
+              <Table columnCount="4" rowCount="1">
+                <Column editable="true" title="Curso" type="java.lang.Object">
+                  <Data value="espa&#xf1;ol"/>
+                </Column>
+                <Column editable="true" title="ID" type="java.lang.Object">
+                  <Data value="452352"/>
+                </Column>
+                <Column editable="true" title="ID profesor" type="java.lang.Object">
+                  <Data value="443543"/>
+                </Column>
+                <Column editable="true" title="Descripcion" type="java.lang.Object">
+                  <Data value="gdfsagdfgfsjsf"/>
+                </Column>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -261,6 +271,9 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tablaCursosMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

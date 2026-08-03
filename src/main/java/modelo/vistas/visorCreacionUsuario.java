@@ -1,5 +1,10 @@
 
 package modelo.vistas;
+//imports de otras clases
+//import modelo.curso;
+//imports para operaciones internas
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -42,26 +47,23 @@ public class visorCreacionUsuario extends javax.swing.JFrame {
         botonEliminarUsuario = new javax.swing.JButton();
         BotonRegresoMenu = new javax.swing.JButton();
         BotonTablaUsuarios = new javax.swing.JButton();
+        rolUsuario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         tablavisualizacionUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {"tutu", "214342", "gfGGDFGFDF", "RTREAQG", "patata"}
             },
             new String [] {
                 "Nombre", "ID", "Correo", "Contraseña", "Rol"
             }
         ));
+        tablavisualizacionUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablavisualizacionUsuariosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tablavisualizacionUsuarios);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -93,15 +95,35 @@ public class visorCreacionUsuario extends javax.swing.JFrame {
         jLabel6.setText("Rol");
 
         RolUsuarioProfesor.setText("Profesor");
+        RolUsuarioProfesor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RolUsuarioProfesorActionPerformed(evt);
+            }
+        });
 
         botonCrearUsuario.setText("Crear");
+        botonCrearUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCrearUsuarioActionPerformed(evt);
+            }
+        });
 
         botonEditarDatosUsuario.setText("Editar");
+        botonEditarDatosUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEditarDatosUsuarioActionPerformed(evt);
+            }
+        });
 
         botonEliminarUsuario.setBackground(new java.awt.Color(255, 51, 51));
         botonEliminarUsuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         botonEliminarUsuario.setForeground(new java.awt.Color(0, 0, 0));
         botonEliminarUsuario.setText("Eliminar");
+        botonEliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarUsuarioActionPerformed(evt);
+            }
+        });
 
         BotonRegresoMenu.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         BotonRegresoMenu.setText("Regresar al menu");
@@ -131,7 +153,6 @@ public class visorCreacionUsuario extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BotonRegresoMenu)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(verNombreUsuario)
@@ -145,7 +166,10 @@ public class visorCreacionUsuario extends javax.swing.JFrame {
                                     .addComponent(RolUsuarioEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(RolUsuarioProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(rolUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BotonRegresoMenu)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botonCrearUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -187,7 +211,9 @@ public class visorCreacionUsuario extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(RolUsuarioEstudiante)
-                                    .addComponent(RolUsuarioProfesor)))
+                                    .addComponent(RolUsuarioProfesor))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rolUsuario))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(83, 83, 83)
                                 .addComponent(botonCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -210,17 +236,144 @@ public class visorCreacionUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void RolUsuarioEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RolUsuarioEstudianteActionPerformed
-        // TODO add your handling code here:
+        //radio botom para elejir el rol del usuario
+        if (RolUsuarioEstudiante.isSelected()){
+        rolUsuario.setText("Estudiante");
+        }
     }//GEN-LAST:event_RolUsuarioEstudianteActionPerformed
 
     private void BotonTablaUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTablaUsuariosActionPerformed
         //Boton para imprimir la informacion en la tabla
+        /////////procedimientos para creacion de datos
+         String[] linea3 = {"1", "2", "3","4","5"};
+        ////////////
+         //Intanciacion del defaulttablemodel para agregar la informacion a la jtabla
+         DefaultTableModel tablon = (DefaultTableModel)tablavisualizacionUsuarios.getModel();
+         
+        tablon.addRow(linea3);//addRow: agregar la informacion como una linea a la tabla del jframe
+        JOptionPane.showMessageDialog(this,"Se ha activado la tabla de vizualisacion");//opcional
+        //se procura tener los espacios limpios para el usuo del usuario
+        verNombreUsuario.setText("");
+         verIdUsuario.setText("");
+          verCorreoUsuario.setText("" );
+           verContraseñaUsuario.setText("" );
+           rolUsuario.setText("");
+        
+         
     }//GEN-LAST:event_BotonTablaUsuariosActionPerformed
 
     private void BotonRegresoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegresoMenuActionPerformed
-        // Boton para regresar a la pantalla de opciones
+        // Boton para regresar a la pantalla de opciones profesores
         //visorCreacionUsuario--------->visiorOpcionesProfesor
+        visiorOpcionesProfesor pantalla = new visiorOpcionesProfesor();
+        pantalla.setVisible(true);
+         dispose();
+        setVisible(false);
     }//GEN-LAST:event_BotonRegresoMenuActionPerformed
+
+    private void tablavisualizacionUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablavisualizacionUsuariosMouseClicked
+        //porcion de codigo para vizualisar en los espacios de textfield la fila seleccionada por un maus del usuario
+        //Para mejor experiencia de usuario cuando seleccione una linea se visualise en los textfields para sea claro cual usuario es el que editara o eliminara
+        DefaultTableModel tablon = (DefaultTableModel)tablavisualizacionUsuarios.getModel();
+        
+       try{//para evitar problemas usaremos un try catch
+        int selectedRowIndex = tablavisualizacionUsuarios.getSelectedRow();
+        //el index es RowIndex es la fila donde se presione y el numero es la guia para cual dato de x columna ira al textfield correspondiente
+        verNombreUsuario.setText(tablon.getValueAt (selectedRowIndex,0).toString());
+         verIdUsuario.setText(tablon.getValueAt (selectedRowIndex,1).toString() );
+          verCorreoUsuario.setText(tablon.getValueAt (selectedRowIndex,2).toString() );
+           verContraseñaUsuario.setText(tablon.getValueAt (selectedRowIndex,3).toString() );
+           rolUsuario.setText(tablon.getValueAt (selectedRowIndex,4).toString() );
+          
+       }catch(Exception ex)
+         {
+             }
+        
+            
+        
+    }//GEN-LAST:event_tablavisualizacionUsuariosMouseClicked
+
+    private void botonCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearUsuarioActionPerformed
+        // Boton para agregar a la base de datos la linea con los datos del nuevo usuario
+        //variables de uso unico para la operacion del if de comprobacion de espacios vacios
+        String verNombreUsuario2=verNombreUsuario.getText();
+        String verIdUsuario2=verIdUsuario.getText();
+        String verCorreoUsuario2=verCorreoUsuario.getText();
+        String verContraseñaUsuario2=verContraseñaUsuario.getText();
+        String rolUsuario2=rolUsuario.getText();
+        //instacion del defaultablemodel para poder agregar a la jtabla la informacion agregada
+         DefaultTableModel tablon = (DefaultTableModel)tablavisualizacionUsuarios.getModel();
+         
+         if(verNombreUsuario2.equals("")||verIdUsuario2.equals("")||verCorreoUsuario2.equals("")||verContraseñaUsuario2.equals("")||rolUsuario2.equals("")){
+         //en caso de uno de los 5 espacios esta ausente no se procedera la operacion
+             JOptionPane.showMessageDialog(this,"No se puede agregar a la base con espacios vacios");
+         }else{//si ningun dato esta vacio:
+          //addRow: agregar la informacion como una linea a la tabla del jframe   
+         tablon.addRow(new Object[]{verNombreUsuario.getText(),verIdUsuario.getText(),verCorreoUsuario.getText(),verContraseñaUsuario.getText(),rolUsuario.getText()});
+        ///////Procedimientos para agregar a la base de datos el nuevo usuario
+        
+        ////////////////////
+         JOptionPane.showMessageDialog(this,"Se ha agregado el usuario");
+        //Se informa del exito para conformidad del usuario
+        //Se limpian los espacion para evitar un error de duplicado de informacion sin consentimiento
+         verNombreUsuario.setText("");
+         verIdUsuario.setText("");
+          verCorreoUsuario.setText("" );
+           verContraseñaUsuario.setText("" );
+           rolUsuario.setText("");
+           
+         }
+         //JOptionPane.showMessageDialog(this,"Ha fallado agregar al usuario");        
+    
+    }//GEN-LAST:event_botonCrearUsuarioActionPerformed
+
+    private void botonEditarDatosUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEditarDatosUsuarioActionPerformed
+        // Boton para editar un cambio en los datos de una linea
+        
+        
+        
+        //JOptionPane.showMessageDialog(this,"Se ha editado correctamente");
+        //JOptionPane.showMessageDialog(this,"ha fallado la edicion del dato, trate denuevo");
+        //JOptionPane.showMessageDialog(this,"No se puede editar con un espacio vacio");
+    }//GEN-LAST:event_botonEditarDatosUsuarioActionPerformed
+
+    private void botonEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarUsuarioActionPerformed
+        // Boton para Eliminar un usuario
+        //no habra validacion de espacios vacios porque no se pueden agregar lineas con espacios "vacios" en si
+        //instacion del defaultablemodel para poder hacer manipulacion en la jtabla
+        DefaultTableModel tablon = (DefaultTableModel)tablavisualizacionUsuarios.getModel();
+         try{//para evitar problemas usaremos un try catch
+             //el codigo por si solo puede "funcionar" pero genera alertas rojas por tocar una linea en la tabla, una por una
+             //con un try catch evitamos la acumulacion de alertas al punto de congelar la funcion de tocar una linea
+             
+             //selectrowindex es usado para manipular que linea el usuario escoja 
+             int selectedRowIndex = tablavisualizacionUsuarios.getSelectedRow(); 
+             tablon.removeRow(selectedRowIndex);//procedimiento para eliminar LA linea recien tocada
+             JOptionPane.showMessageDialog(this,"Se ha Eliminado al usuario");
+             //Se limpian los espacios para nuevas operaciones despues de informar la accion,
+             //en caso de presionar erroneamente Eliminar  se da la ventana de tiempo de ver los datos que borro para apuntarlos y volver a agregarlo
+             verNombreUsuario.setText("");
+               verIdUsuario.setText("");
+                verCorreoUsuario.setText("" );
+                 verContraseñaUsuario.setText("" );
+                  rolUsuario.setText("");
+         }catch(Exception ex)
+         {
+             //mensaje para indicar que algo no funciono y exploto 
+            JOptionPane.showMessageDialog(this,"No se ha logrado eliminar correctamente al usuario");
+             }
+        
+        
+     
+        //JOptionPane.showMessageDialog(this,"No se puede eliminar con espacios vacios"); //esta no creo deba estar, porque no tiene logica 
+    }//GEN-LAST:event_botonEliminarUsuarioActionPerformed
+
+    private void RolUsuarioProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RolUsuarioProfesorActionPerformed
+        // Radio botom para elejir el rol de profesor al usuario
+        if (RolUsuarioProfesor.isSelected()){
+        rolUsuario.setText("Profesor");
+        }
+    }//GEN-LAST:event_RolUsuarioProfesorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,6 +405,7 @@ public class visorCreacionUsuario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 new visorCreacionUsuario().setVisible(true);
             }
         });
@@ -272,6 +426,7 @@ public class visorCreacionUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel rolUsuario;
     private javax.swing.JTable tablavisualizacionUsuarios;
     private javax.swing.JTextField verContraseñaUsuario;
     private javax.swing.JTextField verCorreoUsuario;

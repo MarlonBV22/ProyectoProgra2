@@ -1,5 +1,8 @@
 
 package modelo.vistas;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Brandon Ortiz
@@ -25,11 +28,11 @@ public class visorCursos extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         idCurso = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        nombreCurso = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         descripcionCurso = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        idProfesor = new javax.swing.JTextField();
         botonCreacionCurso = new javax.swing.JButton();
         botonEliminarCurso = new javax.swing.JButton();
         botonEditar = new javax.swing.JButton();
@@ -58,7 +61,7 @@ public class visorCursos extends javax.swing.JFrame {
 
         jLabel4.setText("Nombre de curso");
 
-        jTextField1.setText("Catalan 5*");
+        nombreCurso.setText("Catalan 5*");
 
         jLabel5.setText("Descripcion de la clase");
 
@@ -66,7 +69,7 @@ public class visorCursos extends javax.swing.JFrame {
 
         jLabel6.setText("ID del profesor");
 
-        jTextField3.setText("34736*");
+        idProfesor.setText("34736*");
 
         botonCreacionCurso.setText("crear ");
         botonCreacionCurso.addActionListener(new java.awt.event.ActionListener() {
@@ -93,15 +96,17 @@ public class visorCursos extends javax.swing.JFrame {
 
         tablaCursos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"español", "452352", "443543", "gdfsagdfgfsjsf"}
             },
             new String [] {
-                "Curso", "ID", "descripcion", "ID profesor"
+                "Curso", "ID", "ID profesor", "Descripcion"
             }
         ));
+        tablaCursos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaCursosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tablaCursos);
 
         botonVerTabla.setText("Visualizar");
@@ -119,34 +124,35 @@ public class visorCursos extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(nombreCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(idCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(idProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(botonCreacionCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(botonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonEliminarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(descripcionCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(160, 160, 160))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(idCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(61, 61, 61)))
                             .addComponent(botonRegresoMenu)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(botonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botonCreacionCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonEliminarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(93, 93, 93)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonVerTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -164,7 +170,7 @@ public class visorCursos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nombreCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,16 +178,16 @@ public class visorCursos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(idCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(idProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(30, 30, 30)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(descripcionCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(botonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botonCreacionCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonEliminarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(botonEliminarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botonRegresoMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -194,37 +200,121 @@ public class visorCursos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonCreacionCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCreacionCursoActionPerformed
-        //Metodo para la creacion de una tabla en los datos de un curso:
+        // Boton para agregar a la base de datos la linea con los datos del nuevo curso
+        //variables de uso unico para la operacion del if de comprobacion de espacios vacios
+        String nombreCurso2=nombreCurso.getText();
+        String idCurso2=idCurso.getText();
+        String idProfesor2=idProfesor.getText();
+        String descripcionCurso2=descripcionCurso.getText();
         
-        //campo de mensaje
-        //En de tener exito en insertar datos: mensajeCursos= "Se ha insertado los datos a la base de datos."
-        //en caso de ausencia de datos: mensajeCursos= "informacion incompleta, porfavor asegurese de rellenar todos los espacios."
+        //instacion del defaultablemodel para poder agregar a la jtabla la informacion agregada
+         DefaultTableModel tablon = (DefaultTableModel)tablaCursos.getModel();
+         
+         if(nombreCurso2.equals("")||idCurso2.equals("")||idProfesor2.equals("")||descripcionCurso2.equals("")){
+         //en caso de uno de los 5 espacios esta ausente no se procedera la operacion
+             JOptionPane.showMessageDialog(this,"No se puede agregar un curso con informacion incompleta");
+         }else{//si ningun dato esta vacio:
+          //addRow: agregar la informacion como una linea a la tabla del jframe   
+         tablon.addRow(new Object[]{nombreCurso.getText(),idCurso.getText(),idProfesor.getText(),descripcionCurso.getText()});
+        ///////Procedimientos para agregar a la base de datos el nuevo usuario
+        
+        ////////////////////
+         JOptionPane.showMessageDialog(this,"Se ha agregado el curso");
+        //Se informa del exito para conformidad del usuario
+        //Se limpian los espacion para evitar un error de duplicado de informacion sin consentimiento
+         nombreCurso.setText("");
+         idCurso.setText("");
+          idProfesor.setText("" );
+           descripcionCurso.setText("");
+         }
+       
+        //JOptionPane.showMessageDialog(this,"No se ha logrado agregar el curso, intente denuevo");
+        //JOptionPane.showMessageDialog(this,"no se puede duplicar un curso");
         
     }//GEN-LAST:event_botonCreacionCursoActionPerformed
 
     private void botonEliminarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarCursoActionPerformed
-        //Metodo para la eliminacion de una tabla que se este visualisando.
+        // Boton para Eliminar un usuario
+        //no habra validacion de espacios vacios porque no se pueden agregar lineas con espacios "vacios" en si
+        //instacion del defaultablemodel para poder hacer manipulacion en la jtabla
+        DefaultTableModel tablon = (DefaultTableModel)tablaCursos.getModel();
+         try{//para evitar problemas usaremos un try catch
+             //el codigo por si solo puede "funcionar" pero genera alertas rojas por tocar una linea en la tabla, una por una
+             //con un try catch evitamos la acumulacion de alertas al punto de congelar la funcion de tocar una linea
+             
+              //selectrowindex es usado para manipular que linea el usuario escoja 
+             int selectedRowIndex = tablaCursos.getSelectedRow(); 
+             tablon.removeRow(selectedRowIndex);
+              JOptionPane.showMessageDialog(this,"Se ha Eliminado el curso");
+             //Se limpian los espacios para nuevas operaciones despues de informar la accion,
+             //en caso de presionar erroneamente Eliminar  se da la ventana de tiempo de ver los datos que borro para apuntarlos y volver a agregarlo
+             nombreCurso.setText("");
+             idCurso.setText("");
+             idProfesor.setText("" );
+             descripcionCurso.setText("");
+         }catch(Exception ex)
+         {
+            JOptionPane.showMessageDialog(this,"No se ha logrado eliminar el curso, intente denuevo");
+             }
         
-        //en caso de una tabla incompleta o sin existencia en la tabla de cursos:
-        //mensajeCursos= "el comando de eliminacion ha fallado, no exista esa tabla en la base de datos."
+        
+        
+  
     }//GEN-LAST:event_botonEliminarCursoActionPerformed
 
     private void botonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEditarActionPerformed
         // Metodo para editar un dato en la fila. 
         
         //Campo de mensajes:
-        //En caso de editar cualquier dato: mensajeCursos= "Se ha editado correctamente a la fila el dato. "
-        //en caso de fallo al editar dato: mensajeCursos= "Ha fallado la edicion del dato, porfavor asegurese de rrelenar correctamente los datos."
+        // JOptionPane.showMessageDialog(this,"Se ha editado la informacion del Curso");
+        //JOptionPane.showMessageDialog(this,"No se ha logrado editar el curso, intente denuevo");
+        //JOptionPane.showMessageDialog(this,"No se puede editar un curso con informacion incompleta");
     }//GEN-LAST:event_botonEditarActionPerformed
 
     private void botonRegresoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresoMenuActionPerformed
         //Boton para regresar a la pantalla de opciones profesor
         //------------------->visiorOpcionesProfesor
+        visiorOpcionesProfesor pantalla = new visiorOpcionesProfesor();
+        pantalla.setVisible(true);
+         dispose();
+        setVisible(false);
     }//GEN-LAST:event_botonRegresoMenuActionPerformed
 
     private void botonVerTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerTablaActionPerformed
         // Boton Para imprimir la informacion en la tabla de contenido
+        /////////procedimientos para creacion de datos
+         String[] linea3 = {"1", "2", "3","4","5"};
+        ////////////
+        //Intanciacion del defaulttablemodel para agregar la informacion a la jtabla
+         DefaultTableModel tablon = (DefaultTableModel)tablaCursos.getModel();
+        tablon.addRow(linea3);//addRow: agregar la informacion como una linea a la tabla del jframe
+        JOptionPane.showMessageDialog(this,"Se ha activado la tabla de vizualisacion");//opcional
+        //se procura tener los espacios limpios para el usuo del usuario
+        nombreCurso.setText("");
+         idCurso.setText("");
+          idProfesor.setText("" );
+           descripcionCurso.setText("" );
+          
     }//GEN-LAST:event_botonVerTablaActionPerformed
+
+    private void tablaCursosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaCursosMouseClicked
+       //porcion de codigo para vizualisar en los espacios de textfield la fila seleccionada por un maus del usuario
+        //Para mejor experiencia de usuario cuando seleccione una linea se visualise en los textfields para sea claro cual curso es el que editara o eliminara
+        DefaultTableModel tablon = (DefaultTableModel)tablaCursos.getModel();
+        
+       try{//para evitar problemas usaremos un try catch
+        int selectedRowIndex = tablaCursos.getSelectedRow();
+        //el index es RowIndex es la fila donde se presione y el numero es la guia para cual dato de x columna ira al textfield correspondiente
+        nombreCurso.setText(tablon.getValueAt (selectedRowIndex,0).toString());
+         idCurso.setText(tablon.getValueAt (selectedRowIndex,1).toString() );
+          idProfesor.setText(tablon.getValueAt (selectedRowIndex,2).toString() );
+           descripcionCurso.setText(tablon.getValueAt (selectedRowIndex,3).toString() );
+           
+          
+       }catch(Exception ex)
+         {
+             }
+    }//GEN-LAST:event_tablaCursosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -269,14 +359,14 @@ public class visorCursos extends javax.swing.JFrame {
     private javax.swing.JButton botonVerTabla;
     private javax.swing.JTextField descripcionCurso;
     private javax.swing.JTextField idCurso;
+    private javax.swing.JTextField idProfesor;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField nombreCurso;
     private javax.swing.JTable tablaCursos;
     // End of variables declaration//GEN-END:variables
 }
