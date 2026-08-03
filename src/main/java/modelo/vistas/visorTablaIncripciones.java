@@ -1,5 +1,9 @@
 
 package modelo.vistas;
+
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Brandon Ortiz
@@ -65,6 +69,11 @@ public class visorTablaIncripciones extends javax.swing.JFrame {
         idInscripcion.setText("26436382");
 
         IdEstudiante.setText("2827");
+        IdEstudiante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IdEstudianteActionPerformed(evt);
+            }
+        });
 
         IdCruso.setText("3454552");
 
@@ -72,12 +81,17 @@ public class visorTablaIncripciones extends javax.swing.JFrame {
 
         tablaDeInscripcion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null}
+                {"gegea", "gaegae", "gawgaew", "rgagrewgea", "9/11/2001"}
             },
             new String [] {
                 "Nombre ", "ID Estudiante", "ID incripcion", "ID curso", "fecha de registro"
             }
         ));
+        tablaDeInscripcion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaDeInscripcionMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tablaDeInscripcion);
 
         botonAgregarInscripcion.setText("Agregar");
@@ -139,10 +153,11 @@ public class visorTablaIncripciones extends javax.swing.JFrame {
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(nombreEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(botonAgregarInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21)
                                 .addComponent(botonEditarInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(botonAgregarInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                                 .addComponent(botonEliminarInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18))
                     .addGroup(layout.createSequentialGroup()
@@ -187,8 +202,8 @@ public class visorTablaIncripciones extends javax.swing.JFrame {
                         .addGap(58, 58, 58)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botonEditarInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonAgregarInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonEliminarInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(botonEliminarInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonAgregarInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
                 .addComponent(botonRegresoMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -199,36 +214,134 @@ public class visorTablaIncripciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonEliminarInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarInscripcionActionPerformed
-        // Metodo para eliminar de la tabla una fila ya visualizada en la pantalla
+         // Boton para Eliminar una Inscripcion
+        //no habra validacion de espacios vacios porque no se pueden agregar lineas con espacios "vacios" en si
+        //instacion del defaultablemodel para poder hacer manipulacion en la jtabla
+         DefaultTableModel tablon = (DefaultTableModel)tablaDeInscripcion.getModel();
+         try{//para evitar problemas usaremos un try catch
+             //el codigo por si solo puede "funcionar" pero genera alertas rojas por tocar una linea en la tabla, una por una
+             //con un try catch evitamos la acumulacion de alertas al punto de congelar la funcion de tocar una linea
+             
+              //selectrowindex es usado para manipular que linea el usuario escoja 
+             int selectedRowIndex = tablaDeInscripcion.getSelectedRow(); 
+             tablon.removeRow(selectedRowIndex);
+             JOptionPane.showMessageDialog(this,"Se ha eliminadoo la inscripcion correctamente");
+             //Se limpian los espacios para nuevas operaciones despues de informar la accion,
+             //en caso de presionar erroneamente Eliminar  se da la ventana de tiempo de ver los datos que borro para apuntarlos y volver a agregarlo
+             nombreEstudiante.setText("");
+         idInscripcion.setText("");
+          IdEstudiante.setText("" );
+           IdCruso.setText("" );
+           FechaInscripcion.setText("");
+             
+         }catch(Exception ex)
+         {
+            //mensaje para indicar que algo no funciono y exploto 
+             //JOptionPane.showMessageDialog(this,"ha fallado la eliminacion de la inscripcion");
+             }
+         
+         
         
-        //En caso de error por no existencia de la fila a la hora de presionar el boton:
-        //mensajeInscripcion= "No se puede elminar la fila en la tabla debido a su nula existencia en la tabla"
+        
     }//GEN-LAST:event_botonEliminarInscripcionActionPerformed
 
     private void botonAgregarInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarInscripcionActionPerformed
-        //Metodo para agregar a la tabla de inscripciones los datos insertados
+        // Boton para agregar a la base de datos la linea con los datos del nuevo usuario
+        //variables de uso unico para la operacion del if de comprobacion de espacios vacios
+        String nombreEstudiante2=nombreEstudiante.getText();
+        String idInscripcion2=idInscripcion.getText();
+        String IdEstudiante2=IdEstudiante.getText();
+        String IdCruso2=IdCruso.getText();
+        String FechaInscripcion2=FechaInscripcion.getText();
+        //instacion del defaultablemodel para poder agregar a la jtabla la informacion agregada
+         DefaultTableModel tablon = (DefaultTableModel)tablaDeInscripcion.getModel();
+        if(nombreEstudiante2.equals("")||idInscripcion2.equals("")||IdEstudiante2.equals("")||IdCruso2.equals("")||FechaInscripcion2.equals("")){
+         //en caso de uno de los 5 espacios esta ausente no se procedera la operacion
+             JOptionPane.showMessageDialog(this,"No se puede agregar una inscripcion incompleta");
+         }else{//si ningun dato esta vacio:
+          //addRow: agregar la informacion como una linea a la tabla del jframe   
+         tablon.addRow(new Object[]{nombreEstudiante.getText(),idInscripcion.getText(),IdEstudiante.getText(),IdCruso.getText(),FechaInscripcion.getText()});
+        ///////Procedimientos para agregar a la base de datos el nuevo usuario
         
-        //campo de mensaje
-        //En de tener exito en insertar datos: mensajeInscripcion= "Se ha insertado los datos a la base de datos."
-        //en caso de ausencia de datos: mensajeInscripcion= "informacion incompleta, porfavor asegurese de rellenar todos los espacios."
+        ////////////////////
+         JOptionPane.showMessageDialog(this,"Se ha agregado la inscripcion correctamente");
+        //Se informa del exito para conformidad del usuario
+        //Se limpian los espacion para evitar un error de duplicado de informacion sin consentimiento
+         nombreEstudiante.setText("");
+         idInscripcion.setText("");
+          IdEstudiante.setText("" );
+           IdCruso.setText("" );
+           FechaInscripcion.setText("");
+           
+         }
+        
+        //JOptionPane.showMessageDialog(this,"ha fallado el ingreso de la inscripcion, trate denuevo");
+        
+          
+       
+        
+        
     }//GEN-LAST:event_botonAgregarInscripcionActionPerformed
 
     private void botonEditarInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEditarInscripcionActionPerformed
         // Metodo para editar la fila de la tabla de datos Inscripciones
         
         //campo de mensaje
-        //En caso de edicion apropiada: mensajeInscripcion= "se ha editado la inscripcion correctamente."
-        // en caso de fallo a la hora de editar: mensajeInscripcion= "fallo al editar la inscripcion, porfavor asegurese de tener correctos los datos."
+        //JOptionPane.showMessageDialog(this,"Se ha editado correctamente");
+        //JOptionPane.showMessageDialog(this,"ha fallado la edicion del dato, trate denuevo");
+        //JOptionPane.showMessageDialog(this,"No se puede editar un campo vacio");
     }//GEN-LAST:event_botonEditarInscripcionActionPerformed
 
     private void BotonTablaIncripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTablaIncripcionesActionPerformed
         // Boton para imprimir contenido en la tabla de inscripciones
+        //////////procedimientos
+        String[] linea3 = {"1", "2", "3","4","5"};
+         ///////////
+         //Intanciacion del defaulttablemodel para agregar la informacion a la jtabla
+         DefaultTableModel tablon = (DefaultTableModel)tablaDeInscripcion.getModel();
+        tablon.addRow(linea3);//addRow: agregar la informacion como una linea a la tabla del jframe
+         JOptionPane.showMessageDialog(this,"Se ha activado la tabla de vizualisacion");//opcional
+        //se procura tener los espacios limpios para el usuo del usuario
+        nombreEstudiante.setText("");
+         idInscripcion.setText("");
+          IdEstudiante.setText("" );
+           IdCruso.setText("" );
+           FechaInscripcion.setText("");
+        
     }//GEN-LAST:event_BotonTablaIncripcionesActionPerformed
 
     private void botonRegresoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresoMenuActionPerformed
         // Boton para regresar al menu profesor
         //--------------->visiorOpcionesProfesor
+        visiorOpcionesProfesor pantalla = new visiorOpcionesProfesor();
+        pantalla.setVisible(true);
+         dispose();
+        setVisible(false);
     }//GEN-LAST:event_botonRegresoMenuActionPerformed
+
+    private void IdEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdEstudianteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IdEstudianteActionPerformed
+
+    private void tablaDeInscripcionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaDeInscripcionMouseClicked
+         //porcion de codigo para vizualisar en los espacios de textfield la fila seleccionada por un maus del usuario
+        //Para mejor experiencia de usuario cuando seleccione una linea se visualise en los textfields para sea claro cual inscripcion es el que editara o eliminara
+        DefaultTableModel tablon = (DefaultTableModel)tablaDeInscripcion.getModel();
+        
+       try{//para evitar problemas usaremos un try catch
+        int selectedRowIndex = tablaDeInscripcion.getSelectedRow();
+        //el index es RowIndex es la fila donde se presione y el numero es la guia para cual dato de x columna ira al textfield correspondiente
+        nombreEstudiante.setText(tablon.getValueAt (selectedRowIndex,0).toString());
+         idInscripcion.setText(tablon.getValueAt (selectedRowIndex,1).toString() );
+          IdEstudiante.setText(tablon.getValueAt (selectedRowIndex,2).toString() );
+           IdCruso.setText(tablon.getValueAt (selectedRowIndex,3).toString() );
+           FechaInscripcion.setText(tablon.getValueAt (selectedRowIndex,4).toString() );
+          
+           
+       }catch(Exception ex)
+         {
+             }
+    }//GEN-LAST:event_tablaDeInscripcionMouseClicked
 
     /**
      * @param args the command line arguments
