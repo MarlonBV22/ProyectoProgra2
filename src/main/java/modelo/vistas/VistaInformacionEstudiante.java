@@ -11,10 +11,10 @@ import javax.swing.JOptionPane;
  * @author Brandon Ortiz
  * //estoy considerando si deba heredar los datos de logeo o hacerlo mas simple y que el estudiante deba volver a poner credenciales para visualisar lo suyo
  */
-public class visorInformacionEstudiante extends javax.swing.JFrame {
+public class VistaInformacionEstudiante extends javax.swing.JFrame {
 
      
-    public visorInformacionEstudiante() {
+    public VistaInformacionEstudiante() {
         initComponents();
     }
 
@@ -191,8 +191,8 @@ public class visorInformacionEstudiante extends javax.swing.JFrame {
 
     private void botonRegresoLogginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresoLogginActionPerformed
         // Boton para regresar al menu de loggeo
-        //visorInformacionEstudiante-------->visorLoggin
-        visorLoggin pantalla =new visorLoggin();
+        //visorInformacionEstudiante-------->VistaLogin
+        VistaLogin pantalla =new VistaLogin();
         pantalla.setVisible(true);
         dispose();
         setVisible(false);
@@ -215,20 +215,21 @@ public class visorInformacionEstudiante extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(visorInformacionEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaInformacionEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(visorInformacionEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaInformacionEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(visorInformacionEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaInformacionEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(visorInformacionEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaInformacionEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new visorInformacionEstudiante().setVisible(true);
+                new VistaInformacionEstudiante().setVisible(true);
             }
         });
     }

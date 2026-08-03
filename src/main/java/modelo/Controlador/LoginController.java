@@ -7,15 +7,15 @@ import modelo.Estudiante;
 import modelo.Profesor;
 import modelo.Usuario;
 import modelo.ClasesDAO.UsuarioDAO;
-import modelo.vistas.visorLoggin;
+import modelo.vistas.VistaLogin;
 
 public class LoginController implements ActionListener {
     
-    private visorLoggin vista;
+    private VistaLogin vista;
     private UsuarioDAO usuarioDao;
     
     // Constructor: Vincula la interfaz con la base de datos
-    public LoginController(visorLoggin vista, UsuarioDAO usuarioDao) {
+    public LoginController(VistaLogin vista, UsuarioDAO usuarioDao) {
         this.vista = vista;
         this.usuarioDao = usuarioDao;
 
@@ -63,8 +63,15 @@ public class LoginController implements ActionListener {
 
                 // Evaluamos con 'instanceof' qué tipo de objeto real llegó
                 if (usuarioLogueado instanceof Profesor) {
-                    System.out.println("¡Profesor verificado! Abriendo Dashboard de Profesor...");
-                    // Aquí irá la instancia del Dashboard del Profesor en el futuro
+                    // 1. Instanciamos la vista del menú del profesor
+                    modelo.vistas.VistaOpcionesProfesor menuProfesor = new modelo.vistas.VistaOpcionesProfesor();
+    
+                    // 2. Instanciamos su respectivo controlador pasándole la vista
+                    modelo.Controlador.OpcionesProfesorController controlMenu = new modelo.Controlador.OpcionesProfesorController(menuProfesor);
+                    
+                    // 3. Centramos y mostramos la pantalla
+                    menuProfesor.setLocationRelativeTo(null);
+                    menuProfesor.setVisible(true);
                 } else if (usuarioLogueado instanceof Estudiante) {
                     System.out.println("¡Estudiante verificado! Abriendo Dashboard de Estudiante...");
                     // Aquí irá la instancia del Dashboard del Estudiante en el futuro

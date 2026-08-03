@@ -10,12 +10,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Brandon Ortiz
  */
-public class visorCreacionUsuario extends javax.swing.JFrame {
+public class VistaCreacionUsuario extends javax.swing.JFrame {
 
     /**
      * Creates new form visorCreacionUsuario
      */
-    public visorCreacionUsuario() {
+    public VistaCreacionUsuario() {
         initComponents();
     }
 
@@ -264,8 +264,8 @@ public class visorCreacionUsuario extends javax.swing.JFrame {
 
     private void BotonRegresoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegresoMenuActionPerformed
         // Boton para regresar a la pantalla de opciones profesores
-        //visorCreacionUsuario--------->visiorOpcionesProfesor
-        visiorOpcionesProfesor pantalla = new visiorOpcionesProfesor();
+        //visorCreacionUsuario--------->VistaOpcionesProfesor
+        VistaOpcionesProfesor pantalla = new VistaOpcionesProfesor();
         pantalla.setVisible(true);
          dispose();
         setVisible(false);
@@ -392,21 +392,22 @@ public class visorCreacionUsuario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(visorCreacionUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCreacionUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(visorCreacionUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCreacionUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(visorCreacionUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCreacionUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(visorCreacionUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCreacionUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 
-                new visorCreacionUsuario().setVisible(true);
+                new VistaCreacionUsuario().setVisible(true);
             }
         });
     }

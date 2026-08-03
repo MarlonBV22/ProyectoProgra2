@@ -6,10 +6,10 @@ import javax.swing.JOptionPane;
  *
  * @author Brandon Ortiz
  */
-public class visorLoggin extends javax.swing.JFrame {
+public class VistaLogin extends javax.swing.JFrame {
 
     
-    public visorLoggin() {
+    public VistaLogin() {
         initComponents();
     }
 
@@ -34,7 +34,6 @@ public class visorLoggin extends javax.swing.JFrame {
 
         btnIngresar.setBackground(new java.awt.Color(255, 255, 51));
         btnIngresar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnIngresar.setForeground(new java.awt.Color(0, 0, 0));
         btnIngresar.setText("---->");
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,20 +166,21 @@ public class visorLoggin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(visorLoggin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(visorLoggin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(visorLoggin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(visorLoggin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new visorLoggin().setVisible(true);
+                new VistaLogin().setVisible(true);
             }
         });
     }

@@ -8,10 +8,10 @@ import javax.swing.JToggleButton;
  * @author Brandon Ortiz
  */
 
-public class visiorOpcionesProfesor extends javax.swing.JFrame {
+public class VistaOpcionesProfesor extends javax.swing.JFrame {
 
    
-    public visiorOpcionesProfesor() {
+    public VistaOpcionesProfesor() {
         initComponents();
     }
 
@@ -26,9 +26,9 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
 
         btnCursos = new javax.swing.JButton();
         btnInscripciones = new javax.swing.JButton();
-        botonLoggin = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnAdministradorUsuarios = new javax.swing.JToggleButton();
+        btnUsuarios = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,24 +50,24 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
             }
         });
 
-        botonLoggin.setBackground(new java.awt.Color(255, 204, 204));
-        botonLoggin.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        botonLoggin.setText("Regresar al inicio");
-        botonLoggin.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresar.setBackground(new java.awt.Color(255, 204, 204));
+        btnRegresar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnRegresar.setText("Regresar al inicio");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonLogginActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("¿A cual desea ingresar?");
 
-        btnAdministradorUsuarios.setBackground(new java.awt.Color(102, 255, 102));
-        btnAdministradorUsuarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnAdministradorUsuarios.setText("Administrador de Usuarios");
-        btnAdministradorUsuarios.addActionListener(new java.awt.event.ActionListener() {
+        btnUsuarios.setBackground(new java.awt.Color(102, 255, 102));
+        btnUsuarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnUsuarios.setText("Administrador de Usuarios");
+        btnUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdministradorUsuariosActionPerformed(evt);
+                btnUsuariosActionPerformed(evt);
             }
         });
 
@@ -82,8 +82,8 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
                     .addComponent(btnInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAdministradorUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonLoggin, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(26, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -97,12 +97,12 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnAdministradorUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCursos, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInscripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonLoggin, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(171, 171, 171))
         );
 
@@ -120,15 +120,15 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
         //visorOpcionesProfesor----------->visorTablaInscripcion
     }//GEN-LAST:event_btnInscripcionesActionPerformed
 
-    private void botonLogginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLogginActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         //Metodo para redirigir a la pantalla del loggin
         //visorOpcionesProfesor---------->visorLoggin
-    }//GEN-LAST:event_botonLogginActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void btnAdministradorUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministradorUsuariosActionPerformed
+    private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
         // Boton para redirigir al administrador de usuarios
         //----------------------visorCreacionUsuarios
-    }//GEN-LAST:event_btnAdministradorUsuariosActionPerformed
+    }//GEN-LAST:event_btnUsuariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,29 +147,30 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(visiorOpcionesProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaOpcionesProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(visiorOpcionesProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaOpcionesProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(visiorOpcionesProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaOpcionesProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(visiorOpcionesProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaOpcionesProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new visiorOpcionesProfesor().setVisible(true);
+                new VistaOpcionesProfesor().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonLoggin;
-    private javax.swing.JToggleButton btnAdministradorUsuarios;
-    private javax.swing.JButton btnCursos;
-    private javax.swing.JButton btnInscripciones;
+    public javax.swing.JButton btnCursos;
+    public javax.swing.JButton btnInscripciones;
+    public javax.swing.JButton btnRegresar;
+    public javax.swing.JToggleButton btnUsuarios;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
   // se crea getts por que son privados y se ocupan en el controlador
@@ -178,7 +179,7 @@ public class visiorOpcionesProfesor extends javax.swing.JFrame {
 }
 
 public JToggleButton getbtnAdministradorUsuarios() {
-    return btnAdministradorUsuarios;
+    return btnUsuarios;
 }
 
 public javax.swing.JButton getbtnCursos(){

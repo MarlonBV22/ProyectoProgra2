@@ -7,10 +7,10 @@ import javax.swing.JOptionPane;
  *
  * @author Brandon Ortiz
  */
-public class visorCursos extends javax.swing.JFrame {
+public class VistaCursos extends javax.swing.JFrame {
 
     
-    public visorCursos() {
+    public VistaCursos() {
         initComponents();
     }
 
@@ -273,8 +273,8 @@ public class visorCursos extends javax.swing.JFrame {
 
     private void botonRegresoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresoMenuActionPerformed
         //Boton para regresar a la pantalla de opciones profesor
-        //------------------->visiorOpcionesProfesor
-        visiorOpcionesProfesor pantalla = new visiorOpcionesProfesor();
+        //------------------->VistaOpcionesProfesor
+        VistaOpcionesProfesor pantalla = new VistaOpcionesProfesor();
         pantalla.setVisible(true);
          dispose();
         setVisible(false);
@@ -333,20 +333,21 @@ public class visorCursos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(visorCursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(visorCursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(visorCursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(visorCursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCursos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new visorCursos().setVisible(true);
+                new VistaCursos().setVisible(true);
             }
         });
     }

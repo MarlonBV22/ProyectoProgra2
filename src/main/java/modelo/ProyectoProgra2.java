@@ -3,14 +3,14 @@ package modelo;
 
 import modelo.ClasesDAO.UsuarioDAO;
 import modelo.Controlador.LoginController;
-import modelo.vistas.visorLoggin;
+import modelo.vistas.VistaLogin;
 
 
 public class ProyectoProgra2 {
 
     public static void main(String[] args) {
         // 1. Instanciamos la Vista (el JFrame diseñado por tu compañero)
-        visorLoggin pantallaLogin = new visorLoggin();
+        VistaLogin pantallaLogin = new VistaLogin();
         
         // 2. Instanciamos el Modelo DAO (el acceso a datos que tú programaste)
         UsuarioDAO daoUsuario = new UsuarioDAO();

@@ -9,10 +9,10 @@ import javax.swing.table.DefaultTableModel;
  * @author Brandon Ortiz
  */
 
-public class visorTablaIncripciones extends javax.swing.JFrame {
+public class VistaTablaInscripciones extends javax.swing.JFrame {
 
     
-    public visorTablaIncripciones() {
+    public VistaTablaInscripciones() {
         initComponents();
     }
 
@@ -312,8 +312,8 @@ public class visorTablaIncripciones extends javax.swing.JFrame {
 
     private void botonRegresoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresoMenuActionPerformed
         // Boton para regresar al menu profesor
-        //--------------->visiorOpcionesProfesor
-        visiorOpcionesProfesor pantalla = new visiorOpcionesProfesor();
+        //--------------->VistaOpcionesProfesor
+        VistaOpcionesProfesor pantalla = new VistaOpcionesProfesor();
         pantalla.setVisible(true);
          dispose();
         setVisible(false);
@@ -360,20 +360,21 @@ public class visorTablaIncripciones extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(visorTablaIncripciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaTablaInscripciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(visorTablaIncripciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaTablaInscripciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(visorTablaIncripciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaTablaInscripciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(visorTablaIncripciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaTablaInscripciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new visorTablaIncripciones().setVisible(true);
+                new VistaTablaInscripciones().setVisible(true);
             }
         });
     }

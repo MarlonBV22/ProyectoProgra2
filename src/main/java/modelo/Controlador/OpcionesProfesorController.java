@@ -1,70 +1,62 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package modelo.Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import modelo.vistas.VistaOpcionesProfesor;
+import modelo.vistas.VistaCursos;
+import modelo.vistas.VistaLogin;
+import modelo.vistas.VistaTablaInscripciones;
+import modelo.vistas.VistaCreacionUsuario;
 
-import modelo.vistas.visiorOpcionesProfesor;
-import modelo.vistas.visorCursos;
-import modelo.vistas.visorLoggin;
-import modelo.vistas.visorTablaIncripciones;
-
-/**
- *
- * @author David Cruz
- */
-        // escucha que hace el boton que se selecciona
 public class OpcionesProfesorController implements ActionListener {
-    //guarda la ventana del profe
-     private visiorOpcionesProfesor vista;
+    
+    private VistaOpcionesProfesor vista;
 
-      public OpcionesProfesorController(
-          visiorOpcionesProfesor vista
-    ) {
-          
+    public OpcionesProfesorController(VistaOpcionesProfesor vista) {
         this.vista = vista;
-        //conecta los botones
-        vista.getbtnCursos().addActionListener(this);
-        vista.getbtnInscripciones().addActionListener(this);
-        vista.getbtnAdministradorUsuarios().addActionListener(this);
+        
+        // Conecta los botones directamente
+        this.vista.btnCursos.addActionListener(this);
+        this.vista.btnInscripciones.addActionListener(this);
+        this.vista.btnUsuarios.addActionListener(this);
+        this.vista.btnRegresar.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-           //pregunta si fue el boton curso
-        if (e.getSource() == vista.getbtnCursos()) {
-           //crear el curso
-            visorCursos ventanaCursos =
-                    new visorCursos();
-
+        
+        // 1. Botón Cursos
+        if (e.getSource() == vista.btnCursos) {
+            VistaCursos ventanaCursos = new VistaCursos();
+            ventanaCursos.setLocationRelativeTo(null); // Centra la ventana
             ventanaCursos.setVisible(true);
             vista.dispose();
         }
-        //pregunta 
-        if (e.getSource() == vista.getbtnInscripciones()) {
-          // crea
-            visorTablaIncripciones ventanaInscripciones =
-                    new visorTablaIncripciones();
-
+        
+        // 2. Botón Inscripciones
+        if (e.getSource() == vista.btnInscripciones) {
+            VistaTablaInscripciones ventanaInscripciones = new VistaTablaInscripciones();
+            ventanaInscripciones.setLocationRelativeTo(null);
             ventanaInscripciones.setVisible(true);
             vista.dispose();
         }
-           //pregunta
-        if (e.getSource() == vista.getbtnAdministradorUsuarios()) {
-            // crea
-             visiorOpcionesProfesor vista = new visiorOpcionesProfesor();
-               OpcionesProfesorController controlador =
-                   new OpcionesProfesorController(vista);
+        
+        // 3. Botón Administrador de Usuarios
+        if (e.getSource() == vista.btnUsuarios) {
+            VistaCreacionUsuario ventanaUsuarios = new VistaCreacionUsuario();
+            ventanaUsuarios.setLocationRelativeTo(null);
+            ventanaUsuarios.setVisible(true);
+            vista.dispose();
+        }
 
-                           vista.setVisible(true);
-            /*visorLoggin login =
-                   new visorLoggin();
-
+        // 4. Botón Regresar al Inicio
+        if (e.getSource() == vista.btnRegresar) {
+            VistaLogin login = new VistaLogin();
+            login.setLocationRelativeTo(null);
             login.setVisible(true);
-            vista.dispose(); */
-       }
+            vista.dispose(); // Cierra el menú del profesor
+        }
     }
 }
+
