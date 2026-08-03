@@ -50,12 +50,23 @@ public class OpcionesProfesorController implements ActionListener {
             vista.dispose();
         }
 
-        // 4. Botón Regresar al Inicio
+        // 4. Botón Regresar al Inicio       
         if (e.getSource() == vista.btnRegresar) {
-            VistaLogin login = new VistaLogin();
+            // 1. Crea la nueva pantalla de Login
+            modelo.vistas.VistaLogin login = new modelo.vistas.VistaLogin(); 
+    
+            // 2. Instancia un nuevo UsuarioDAO para el proceso de datos
+            modelo.ClasesDAO.UsuarioDAO daoUsuario = new modelo.ClasesDAO.UsuarioDAO();
+
+            // 3. Crea un nuevo LoginController para amarrar la nueva ventana
+            modelo.Controlador.LoginController controlLogin = new modelo.Controlador.LoginController(login, daoUsuario);
+
+            // 4. Centra y muestra la ventana en pantalla
             login.setLocationRelativeTo(null);
-            login.setVisible(true);
-            vista.dispose(); // Cierra el menú del profesor
+            login.setVisible(true); 
+
+            // 5. Destruye el menú actual del profesor
+            vista.dispose(); 
         }
     }
 }
