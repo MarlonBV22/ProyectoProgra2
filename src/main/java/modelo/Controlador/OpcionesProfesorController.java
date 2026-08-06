@@ -3,11 +3,12 @@ package modelo.Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import modelo.ClasesDAO.UsuarioDAO;
 import modelo.vistas.VistaOpcionesProfesor;
 import modelo.vistas.VistaCursos;
 import modelo.vistas.VistaLogin;
-import modelo.vistas.VistaTablaInscripciones;
-import modelo.vistas.VistaCreacionUsuario;
+import modelo.vistas.VistaInscripciones;
+import modelo.vistas.VistaUsuarios;
 
 public class OpcionesProfesorController implements ActionListener {
     
@@ -26,7 +27,7 @@ public class OpcionesProfesorController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        // 1. Botón Cursos
+        // Botón Cursos
         if (e.getSource() == vista.btnCursos) {
             VistaCursos ventanaCursos = new VistaCursos();
             ventanaCursos.setLocationRelativeTo(null); // Centra la ventana
@@ -34,23 +35,35 @@ public class OpcionesProfesorController implements ActionListener {
             vista.dispose();
         }
         
-        // 2. Botón Inscripciones
+        // Botón Inscripciones
         if (e.getSource() == vista.btnInscripciones) {
-            VistaTablaInscripciones ventanaInscripciones = new VistaTablaInscripciones();
+            VistaInscripciones ventanaInscripciones = new VistaInscripciones();
             ventanaInscripciones.setLocationRelativeTo(null);
             ventanaInscripciones.setVisible(true);
             vista.dispose();
         }
         
-        // 3. Botón Administrador de Usuarios
+        // Botón Administrador de Usuarios
         if (e.getSource() == vista.btnUsuarios) {
-            VistaCreacionUsuario ventanaUsuarios = new VistaCreacionUsuario();
+            // 1. Creamos la pantalla
+            modelo.vistas.VistaUsuarios ventanaUsuarios = new modelo.vistas.VistaUsuarios(); 
+
+            // 2. Instanciamos su DAO correspondiente
+            modelo.ClasesDAO.UsuarioDAO daoUsuarios = new modelo.ClasesDAO.UsuarioDAO();
+
+            // 3. Enlazamos la pantalla con su controlador especializado
+            modelo.Controlador.UsuariosController controlUsuarios = new modelo.Controlador.UsuariosController(ventanaUsuarios, daoUsuarios);
+
+            // 4. Centramos y abrimos la ventana
             ventanaUsuarios.setLocationRelativeTo(null);
             ventanaUsuarios.setVisible(true);
+
+            // 5. Ocultamos el menú de navegación actual
             vista.dispose();
         }
 
-        // 4. Botón Regresar al Inicio       
+
+        // Botón Regresar al Inicio       
         if (e.getSource() == vista.btnRegresar) {
             // 1. Crea la nueva pantalla de Login
             modelo.vistas.VistaLogin login = new modelo.vistas.VistaLogin(); 
