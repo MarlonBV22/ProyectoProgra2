@@ -21,7 +21,8 @@ public class UsuariosController implements ActionListener {
     public UsuariosController(VistaUsuarios vista, UsuarioDAO usuarioDao) {
         this.vista = vista;
         this.usuarioDao = usuarioDao;
-
+        
+        this.vista.btnBuscar.addActionListener(this);
         this.vista.btnCrear.addActionListener(this);
         this.vista.btnRegresarMenu.addActionListener(this);
         this.vista.btnVisualizar.addActionListener(this);
@@ -41,6 +42,48 @@ public class UsuariosController implements ActionListener {
             vista.dispose(); // Cierra el administrador de usuarios
         }
 
+        // Botón Buscar por ID
+        if (e.getSource() == vista.btnBuscar) {
+            // 1. Le pedimos el ID al profesor mediante una cajita emergente limpia
+            String inputId = javax.swing.JOptionPane.showInputDialog(vista, "Ingrese el ID del usuario a buscar:", "Buscar Usuario", javax.swing.JOptionPane.QUESTION_MESSAGE);
+
+            // Si el usuario presiona cancelar o cierra la cajita, salimos del método
+            if (inputId == null || inputId.trim().isEmpty()) {
+                return;
+            }
+
+            try {
+                // 2. Convertimos el texto ingresado a un número entero
+                int idUsuario = Integer.parseInt(inputId.trim());
+
+                // 3. Consultamos al UsuarioDAO
+                Usuario usuarioEncontrado = usuarioDao.buscarUsuarioPorId(idUsuario);
+
+                // 4. Procesamos el resultado
+                if (usuarioEncontrado != null) {
+                    // Si lo encuentra, rellenamos automáticamente las cajas de texto de la izquierda con sus datos
+                    vista.txtNombre.setText(usuarioEncontrado.getNombre());
+                    vista.txtCorreo.setText(usuarioEncontrado.getEmail());
+                    vista.txtPassword.setText(usuarioEncontrado.getPassword());
+
+                    // Activamos el Radio Button correspondiente según su rol
+                    if ("ESTUDIANTE".equalsIgnoreCase(usuarioEncontrado.getRol())) {
+                        vista.rbEstudiante.setSelected(true);
+                    } else if ("PROFESOR".equalsIgnoreCase(usuarioEncontrado.getRol())) {
+                        vista.rbProfesor.setSelected(true);
+                    }
+
+                    javax.swing.JOptionPane.showMessageDialog(vista, "¡Usuario encontrado y cargado en el formulario!");
+                } else {
+                    javax.swing.JOptionPane.showMessageDialog(vista, "No se encontró ningún usuario con el ID: " + idUsuario, "Sin resultados", javax.swing.JOptionPane.WARNING_MESSAGE);
+                }
+
+            } catch (NumberFormatException nfe) {
+                // Si el profesor escribe letras en lugar de un número de ID
+                javax.swing.JOptionPane.showMessageDialog(vista, "Por favor, ingrese un ID numérico válido.", "Error de formato", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        }
+ 
         // Botón Crear Usuario
         if (e.getSource() == vista.btnCrear) {
             // 1. Extraer los datos básicos de la vista
