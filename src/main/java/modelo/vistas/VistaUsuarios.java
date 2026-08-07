@@ -7,9 +7,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class VistaUsuarios extends javax.swing.JFrame {
 
-    /**
-     * Creates new form visorCreacionUsuario
-     */
+    
     public VistaUsuarios() {
         initComponents();
     }
@@ -93,7 +91,7 @@ public class VistaUsuarios extends javax.swing.JFrame {
         btnEliminar.setText("Eliminar");
 
         btnRegresarMenu.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnRegresarMenu.setText("Regresar al menu");
+        btnRegresarMenu.setText("Regresar al menú");
 
         btnVisualizar.setText("Visualizar");
 

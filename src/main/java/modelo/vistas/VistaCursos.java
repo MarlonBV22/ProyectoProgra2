@@ -23,98 +23,64 @@ public class VistaCursos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botonRegresoMenu = new javax.swing.JButton();
+        btnRegresarMenu = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        idCurso = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        nombreCurso = new javax.swing.JTextField();
+        txtNombreCurso = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        descripcionCurso = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        idProfesor = new javax.swing.JTextField();
-        botonCreacionCurso = new javax.swing.JButton();
-        botonEliminarCurso = new javax.swing.JButton();
-        botonEditar = new javax.swing.JButton();
+        txtIdProfesor = new javax.swing.JTextField();
+        btnCrear = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaCursos = new javax.swing.JTable();
-        botonVerTabla = new javax.swing.JButton();
+        tblCursos = new javax.swing.JTable();
+        btnVisualizar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtDescripcion = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        botonRegresoMenu.setBackground(new java.awt.Color(153, 204, 255));
-        botonRegresoMenu.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        botonRegresoMenu.setForeground(new java.awt.Color(0, 0, 0));
-        botonRegresoMenu.setText("Regresar al menu");
-        botonRegresoMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonRegresoMenuActionPerformed(evt);
-            }
-        });
+        btnRegresarMenu.setBackground(new java.awt.Color(153, 204, 255));
+        btnRegresarMenu.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnRegresarMenu.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegresarMenu.setText("Regresar al menú");
 
         jLabel2.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-        jLabel2.setText("Tabla de cursos");
+        jLabel2.setText("Cursos");
 
-        jLabel3.setText("ID del curso");
+        jLabel4.setText("Nombre del curso");
 
-        idCurso.setText("46321*");
-
-        jLabel4.setText("Nombre de curso");
-
-        nombreCurso.setText("Catalan 5*");
-
-        jLabel5.setText("Descripcion de la clase");
-
-        descripcionCurso.setText("en esta clase se realisan visionado de un idioma muerto");
+        jLabel5.setText("Descripción del curso");
 
         jLabel6.setText("ID del profesor");
 
-        idProfesor.setText("34736*");
+        btnCrear.setText("Crear");
 
-        botonCreacionCurso.setText("crear ");
-        botonCreacionCurso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCreacionCursoActionPerformed(evt);
-            }
-        });
+        btnEliminar.setBackground(new java.awt.Color(255, 51, 51));
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminar.setText("Eliminar");
 
-        botonEliminarCurso.setBackground(new java.awt.Color(255, 51, 51));
-        botonEliminarCurso.setForeground(new java.awt.Color(255, 255, 255));
-        botonEliminarCurso.setText("Eliminar");
-        botonEliminarCurso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminarCursoActionPerformed(evt);
-            }
-        });
+        btnEditar.setText("Editar");
 
-        botonEditar.setText("Editar");
-        botonEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEditarActionPerformed(evt);
-            }
-        });
-
-        tablaCursos.setModel(new javax.swing.table.DefaultTableModel(
+        tblCursos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"español", "452352", "443543", "gdfsagdfgfsjsf"}
+
             },
             new String [] {
-                "Curso", "ID", "ID profesor", "Descripcion"
+                "ID Curso", "Nombre Curso", "ID Profesor", "Descripción"
             }
         ));
-        tablaCursos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tablaCursosMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tablaCursos);
+        jScrollPane1.setViewportView(tblCursos);
 
-        botonVerTabla.setText("Visualizar");
-        botonVerTabla.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonVerTablaActionPerformed(evt);
-            }
-        });
+        btnVisualizar.setText("Visualizar");
+
+        btnBuscar.setText("Buscar");
+
+        txtDescripcion.setColumns(20);
+        txtDescripcion.setRows(5);
+        jScrollPane2.setViewportView(txtDescripcion);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,38 +90,31 @@ public class VistaCursos extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(nombreCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(idCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(idProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombreCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 314, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(botonCreacionCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(botonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botonEliminarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(descripcionCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonRegresoMenu)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(28, 28, 28)
+                                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(27, 27, 27)
+                                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnRegresarMenu)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtIdProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonVerTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(64, 64, 64))
         );
         layout.setVerticalGroup(
@@ -164,157 +123,37 @@ public class VistaCursos extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonVerTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(nombreCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(idCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(idProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(descripcionCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(botonCreacionCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonEliminarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonRegresoMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 64, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap(65, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtNombreCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtIdProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRegresarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void botonCreacionCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCreacionCursoActionPerformed
-        // Boton para agregar a la base de datos la linea con los datos del nuevo curso
-        //variables de uso unico para la operacion del if de comprobacion de espacios vacios
-        String nombreCurso2=nombreCurso.getText();
-        String idCurso2=idCurso.getText();
-        String idProfesor2=idProfesor.getText();
-        String descripcionCurso2=descripcionCurso.getText();
-        
-        //instacion del defaultablemodel para poder agregar a la jtabla la informacion agregada
-         DefaultTableModel tablon = (DefaultTableModel)tablaCursos.getModel();
-         
-         if(nombreCurso2.equals("")||idCurso2.equals("")||idProfesor2.equals("")||descripcionCurso2.equals("")){
-         //en caso de uno de los 5 espacios esta ausente no se procedera la operacion
-             JOptionPane.showMessageDialog(this,"No se puede agregar un curso con informacion incompleta");
-         }else{//si ningun dato esta vacio:
-          //addRow: agregar la informacion como una linea a la tabla del jframe   
-         tablon.addRow(new Object[]{nombreCurso.getText(),idCurso.getText(),idProfesor.getText(),descripcionCurso.getText()});
-        ///////Procedimientos para agregar a la base de datos el nuevo usuario
-        
-        ////////////////////
-         JOptionPane.showMessageDialog(this,"Se ha agregado el curso");
-        //Se informa del exito para conformidad del usuario
-        //Se limpian los espacion para evitar un error de duplicado de informacion sin consentimiento
-         nombreCurso.setText("");
-         idCurso.setText("");
-          idProfesor.setText("" );
-           descripcionCurso.setText("");
-         }
-       
-        //JOptionPane.showMessageDialog(this,"No se ha logrado agregar el curso, intente denuevo");
-        //JOptionPane.showMessageDialog(this,"no se puede duplicar un curso");
-        
-    }//GEN-LAST:event_botonCreacionCursoActionPerformed
-
-    private void botonEliminarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarCursoActionPerformed
-        // Boton para Eliminar un usuario
-        //no habra validacion de espacios vacios porque no se pueden agregar lineas con espacios "vacios" en si
-        //instacion del defaultablemodel para poder hacer manipulacion en la jtabla
-        DefaultTableModel tablon = (DefaultTableModel)tablaCursos.getModel();
-         try{//para evitar problemas usaremos un try catch
-             //el codigo por si solo puede "funcionar" pero genera alertas rojas por tocar una linea en la tabla, una por una
-             //con un try catch evitamos la acumulacion de alertas al punto de congelar la funcion de tocar una linea
-             
-              //selectrowindex es usado para manipular que linea el usuario escoja 
-             int selectedRowIndex = tablaCursos.getSelectedRow(); 
-             tablon.removeRow(selectedRowIndex);
-              JOptionPane.showMessageDialog(this,"Se ha Eliminado el curso");
-             //Se limpian los espacios para nuevas operaciones despues de informar la accion,
-             //en caso de presionar erroneamente Eliminar  se da la ventana de tiempo de ver los datos que borro para apuntarlos y volver a agregarlo
-             nombreCurso.setText("");
-             idCurso.setText("");
-             idProfesor.setText("" );
-             descripcionCurso.setText("");
-         }catch(Exception ex)
-         {
-            JOptionPane.showMessageDialog(this,"No se ha logrado eliminar el curso, intente denuevo");
-             }
-        
-        
-        
-  
-    }//GEN-LAST:event_botonEliminarCursoActionPerformed
-
-    private void botonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEditarActionPerformed
-        // Metodo para editar un dato en la fila. 
-        
-        //Campo de mensajes:
-        // JOptionPane.showMessageDialog(this,"Se ha editado la informacion del Curso");
-        //JOptionPane.showMessageDialog(this,"No se ha logrado editar el curso, intente denuevo");
-        //JOptionPane.showMessageDialog(this,"No se puede editar un curso con informacion incompleta");
-    }//GEN-LAST:event_botonEditarActionPerformed
-
-    private void botonRegresoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresoMenuActionPerformed
-        //Boton para regresar a la pantalla de opciones profesor
-        //------------------->VistaOpcionesProfesor
-        VistaOpcionesProfesor pantalla = new VistaOpcionesProfesor();
-        pantalla.setVisible(true);
-         dispose();
-        setVisible(false);
-    }//GEN-LAST:event_botonRegresoMenuActionPerformed
-
-    private void botonVerTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerTablaActionPerformed
-        // Boton Para imprimir la informacion en la tabla de contenido
-        /////////procedimientos para creacion de datos
-         String[] linea3 = {"1", "2", "3","4","5"};
-        ////////////
-        //Intanciacion del defaulttablemodel para agregar la informacion a la jtabla
-         DefaultTableModel tablon = (DefaultTableModel)tablaCursos.getModel();
-        tablon.addRow(linea3);//addRow: agregar la informacion como una linea a la tabla del jframe
-        JOptionPane.showMessageDialog(this,"Se ha activado la tabla de vizualisacion");//opcional
-        //se procura tener los espacios limpios para el usuo del usuario
-        nombreCurso.setText("");
-         idCurso.setText("");
-          idProfesor.setText("" );
-           descripcionCurso.setText("" );
-          
-    }//GEN-LAST:event_botonVerTablaActionPerformed
-
-    private void tablaCursosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaCursosMouseClicked
-       //porcion de codigo para vizualisar en los espacios de textfield la fila seleccionada por un maus del usuario
-        //Para mejor experiencia de usuario cuando seleccione una linea se visualise en los textfields para sea claro cual curso es el que editara o eliminara
-        DefaultTableModel tablon = (DefaultTableModel)tablaCursos.getModel();
-        
-       try{//para evitar problemas usaremos un try catch
-        int selectedRowIndex = tablaCursos.getSelectedRow();
-        //el index es RowIndex es la fila donde se presione y el numero es la guia para cual dato de x columna ira al textfield correspondiente
-        nombreCurso.setText(tablon.getValueAt (selectedRowIndex,0).toString());
-         idCurso.setText(tablon.getValueAt (selectedRowIndex,1).toString() );
-          idProfesor.setText(tablon.getValueAt (selectedRowIndex,2).toString() );
-           descripcionCurso.setText(tablon.getValueAt (selectedRowIndex,3).toString() );
-           
-          
-       }catch(Exception ex)
-         {
-             }
-    }//GEN-LAST:event_tablaCursosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -353,21 +192,21 @@ public class VistaCursos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonCreacionCurso;
-    private javax.swing.JButton botonEditar;
-    private javax.swing.JButton botonEliminarCurso;
-    private javax.swing.JButton botonRegresoMenu;
-    private javax.swing.JButton botonVerTabla;
-    private javax.swing.JTextField descripcionCurso;
-    private javax.swing.JTextField idCurso;
-    private javax.swing.JTextField idProfesor;
+    public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnCrear;
+    public javax.swing.JButton btnEditar;
+    public javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnRegresarMenu;
+    public javax.swing.JButton btnVisualizar;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField nombreCurso;
-    private javax.swing.JTable tablaCursos;
+    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTable tblCursos;
+    public javax.swing.JTextArea txtDescripcion;
+    public javax.swing.JTextField txtIdProfesor;
+    public javax.swing.JTextField txtNombreCurso;
     // End of variables declaration//GEN-END:variables
 }

@@ -93,7 +93,7 @@ public class UsuariosController implements ActionListener {
 
             // 2. Validar que los campos de texto no estén vacíos
             if (nombre.isEmpty() || correo.isEmpty() || password.isEmpty()) {
-                JOptionPane.showMessageDialog(vista, "Por favor, llene todos los campos de texto.");
+                JOptionPane.showMessageDialog(vista, "Por favor, llene todos los espacios de texto.");
                 return;
             }
 
@@ -101,7 +101,7 @@ public class UsuariosController implements ActionListener {
             Usuario nuevoUsuario = null;
 
             if (vista.rbEstudiante.isSelected()) {
-                // Instanciamos un Estudiante (El ID va en 0 porque MySQL lo autoincrementa, y la fecha va en null porque la pone el TIMESTAMP)
+                // Instanciamos un Estudiante (El ID va en 0 porque MySQL lo autoincrementa, y la fecha va en null porque utilizamos el TIMESTAMP)
                 nuevoUsuario = new Estudiante(0, nombre, correo, password, null);
             } else if (vista.rbProfesor.isSelected()) {
                 // Instanciamos un Profesor
@@ -116,7 +116,7 @@ public class UsuariosController implements ActionListener {
             boolean exito = usuarioDao.insertarUsuario(nuevoUsuario);
 
             if (exito) {
-                JOptionPane.showMessageDialog(vista, "¡Usuario registrado con éxito en MySQL!");               
+                JOptionPane.showMessageDialog(vista, "¡Usuario registrado con éxito en la base de datos!");               
             } else {
                 JOptionPane.showMessageDialog(vista, "Error al registrar. Verifique si el correo ya existe.");
             }
@@ -169,7 +169,7 @@ public class UsuariosController implements ActionListener {
             String password = new String(vista.txtPassword.getPassword()).trim();
 
             if (nombre.isEmpty() || correo.isEmpty() || password.isEmpty()) {
-                javax.swing.JOptionPane.showMessageDialog(vista, "Llene los campos con los nuevos datos.");
+                javax.swing.JOptionPane.showMessageDialog(vista, "Llene los espacios con los nuevos datos.");
                 return;
             }
 
@@ -193,7 +193,7 @@ public class UsuariosController implements ActionListener {
     // 2. Limpiamos las filas viejas para que no se dupliquen los datos al dar clic varias veces
     modeloTabla.setRowCount(0);
     
-    // 3. Traemos la lista actualizada directamente de la base de datos MySQL
+    // 3. Traemos la lista actualizada directamente de la base de datos
     ArrayList<Usuario> listaUsuarios = usuarioDao.listarUsuarios();
     
         // 4. Recorremos cada usuario y preparamos su fila para la interfaz

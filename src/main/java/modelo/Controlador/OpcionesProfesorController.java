@@ -29,11 +29,18 @@ public class OpcionesProfesorController implements ActionListener {
         
         // Botón Cursos
         if (e.getSource() == vista.btnCursos) {
-            VistaCursos ventanaCursos = new VistaCursos();
-            ventanaCursos.setLocationRelativeTo(null); // Centra la ventana
+            modelo.vistas.VistaCursos ventanaCursos = new modelo.vistas.VistaCursos();
+            modelo.ClasesDAO.CursoDAO daoCurso = new modelo.ClasesDAO.CursoDAO();
+            modelo.ClasesDAO.UsuarioDAO daoUsuario = new modelo.ClasesDAO.UsuarioDAO(); // Lo inyectamos para las validaciones
+
+            // Instanciamos el controlador
+            new modelo.Controlador.CursosController(ventanaCursos, daoCurso, daoUsuario);
+
+            ventanaCursos.setLocationRelativeTo(null);
             ventanaCursos.setVisible(true);
             vista.dispose();
         }
+
         
         // Botón Inscripciones
         if (e.getSource() == vista.btnInscripciones) {
