@@ -1,10 +1,9 @@
 
 package modelo.vistas;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import javax.swing.table.DefaultTableModel;
+
 import javax.swing.JOptionPane;
-import java.util.Random;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,8 +16,7 @@ public class visorInformacionEstudiante extends javax.swing.JFrame {
      private String contraseña;
 
      private int contadorCursos;
-     private int candadoImpresion;
-     private int candadoDeCursos;
+ 
     public visorInformacionEstudiante() {
         initComponents();
     }
@@ -201,36 +199,46 @@ public class visorInformacionEstudiante extends javax.swing.JFrame {
             try{
          String[][] data = {
             {"1", "Café", "2.50","kge"},
-            {"2", "Té", "1.80"},
+            {"2", "torta", "1.80"},
             {"3", "Jugo", "3.00"},
             {"7","torta","4.60","fgiuwsehiuseui"}
         };
           
   
-       String [] colum={"ID estudiante","ID Curso","ID Profesor","Descripcion"}; 
+     //  String [] colum={"ID estudiante","ID Curso","ID Profesor","Descripcion"}; 
        
-        // DefaultTableModel tablon = (DefaultTableModel)prueba.getModel();       
-          TablaVisorDeCursosEstudiante.setModel(new javax.swing.table.DefaultTableModel(data, colum));
-    
+        DefaultTableModel tablon = (DefaultTableModel)TablaVisorDeCursosEstudiante.getModel();       
+        // TablaVisorDeCursosEstudiante.setModel(new javax.swing.table.DefaultTableModel(data, colum));
+     
+        
+        
+//funciona a rastras
    for (int i=0;i<=data.length;i++){
       if (data [i][1].equals("torta")){
           try{
           JOptionPane.showMessageDialog(this,data[i]);
+          String[]linea=data[i];
+         tablon.addRow(linea);
+         
+          /*
            String idEstudiante=TablaVisorDeCursosEstudiante.getValueAt(i, 0).toString();
         String IdCurso=TablaVisorDeCursosEstudiante.getValueAt(i, 1).toString();
         String IdProfesor=TablaVisorDeCursosEstudiante.getValueAt(i, 2).toString();
         String descripcion=TablaVisorDeCursosEstudiante.getValueAt(i, 3).toString();
         String []linea = {idEstudiante,IdCurso,IdProfesor,descripcion};
-        //tablon.addRow(linea);
-        
+      //  tablon.addRow(data[i]);
+        tablon.addRow(linea);
+        **/
       }catch(Exception ex)
          {
            JOptionPane.showMessageDialog(this,"hrñlhjrgdkgjrd");
              } 
           
       }
- 
-} ///////////////////////////////
+      
+ contadorCursos++;
+                  } ///////////////////////////////
+
    
      verNombreEstudiante.setText(nombre);
     verContraseñaEstudiante.setText(contraseña);
@@ -243,7 +251,7 @@ public class visorInformacionEstudiante extends javax.swing.JFrame {
              }   
             
         }else{
-        JOptionPane.showMessageDialog(this,"Algo ha fallado gravemente");
+        JOptionPane.showMessageDialog(this,"No se puede agregar mas cursos");
         }
 
        
