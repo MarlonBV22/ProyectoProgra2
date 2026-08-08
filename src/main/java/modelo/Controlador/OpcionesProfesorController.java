@@ -44,11 +44,19 @@ public class OpcionesProfesorController implements ActionListener {
         
         // Botón Inscripciones
         if (e.getSource() == vista.btnInscripciones) {
-            VistaInscripciones ventanaInscripciones = new VistaInscripciones();
-            ventanaInscripciones.setLocationRelativeTo(null);
-            ventanaInscripciones.setVisible(true);
+            modelo.vistas.VistaInscripciones ventanaIns = new modelo.vistas.VistaInscripciones();
+            modelo.ClasesDAO.InscripcionDAO daoIns = new modelo.ClasesDAO.InscripcionDAO();
+            modelo.ClasesDAO.UsuarioDAO daoUsr = new modelo.ClasesDAO.UsuarioDAO();
+            modelo.ClasesDAO.CursoDAO daoCur = new modelo.ClasesDAO.CursoDAO();
+
+            // Conectamos el controlador inyectándole todos los accesos necesarios
+            new modelo.Controlador.InscripcionesController(ventanaIns, daoIns, daoUsr, daoCur);
+
+            ventanaIns.setLocationRelativeTo(null);
+            ventanaIns.setVisible(true);
             vista.dispose();
         }
+
         
         // Botón Administrador de Usuarios
         if (e.getSource() == vista.btnUsuarios) {

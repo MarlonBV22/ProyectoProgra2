@@ -3,6 +3,8 @@ package modelo.Controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color; // Para cambiar el color del texto del mensaje (Si se desea)
+import modelo.ClasesDAO.CursoDAO;
+import modelo.ClasesDAO.InscripcionDAO;
 import modelo.Estudiante;
 import modelo.Profesor;
 import modelo.Usuario;
@@ -30,13 +32,13 @@ public class LoginController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        // ACCIÓN 1: Si se presiona el botón "Cerrar programa"
+        // Si se presiona el botón "Cerrar programa"
         if (e.getSource() == vista.btnCerrar) {
             System.exit(0);
         }
         
 
-        // ACCIÓN 2: Si se presiona el botón "Ingresar"
+        // Si se presiona el botón "Ingresar"
         if (e.getSource() == vista.btnIngresar) {
             
             // 1. Capturamos los datos ingresados en la interfaz gráfica
@@ -73,8 +75,20 @@ public class LoginController implements ActionListener {
                     menuProfesor.setLocationRelativeTo(null);
                     menuProfesor.setVisible(true);
                 } else if (usuarioLogueado instanceof Estudiante) {
-                    System.out.println("¡Estudiante verificado! Abriendo Dashboard de Estudiante...");
-                    // Aquí irá la instancia del Dashboard del Estudiante en el futuro
+                    // 1. Instanciamos la vista del alumno
+                    modelo.vistas.VistaInformacionEstudiante panelAlumno = new modelo.vistas.VistaInformacionEstudiante();
+
+                    // 2. Instanciamos todos los DAOs que ocupará su controlador para mapear los nombres
+                    InscripcionDAO daoIns = new InscripcionDAO();
+                    UsuarioDAO daoUsr = new UsuarioDAO();
+                    CursoDAO daoCur = new CursoDAO();
+
+                    // 3. Conectamos el controlador del estudiante
+                    new modelo.Controlador.EstudianteController(panelAlumno, daoIns, daoUsr, daoCur);
+
+                    // 4. Mostramos centrado el panel del alumno
+                    panelAlumno.setLocationRelativeTo(null);
+                    panelAlumno.setVisible(true);
                 }
             }
         }

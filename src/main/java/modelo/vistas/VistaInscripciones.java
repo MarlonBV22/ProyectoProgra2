@@ -4,10 +4,7 @@ package modelo.vistas;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Brandon Ortiz
- */
+
 
 public class VistaInscripciones extends javax.swing.JFrame {
 
@@ -25,108 +22,60 @@ public class VistaInscripciones extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botonRegresoMenu = new javax.swing.JButton();
+        btnRegresarMenu = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        idInscripcion = new javax.swing.JTextField();
-        IdEstudiante = new javax.swing.JTextField();
-        IdCruso = new javax.swing.JTextField();
-        FechaInscripcion = new javax.swing.JTextField();
+        txtIdEstudiante = new javax.swing.JTextField();
+        txtIdCurso = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaDeInscripcion = new javax.swing.JTable();
-        botonAgregarInscripcion = new javax.swing.JButton();
-        botonEliminarInscripcion = new javax.swing.JButton();
-        botonEditarInscripcion = new javax.swing.JButton();
-        BotonTablaIncripciones = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        nombreEstudiante = new javax.swing.JTextField();
+        tblInscripciones = new javax.swing.JTable();
+        btnCrear = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnVisualizar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        botonRegresoMenu.setBackground(new java.awt.Color(102, 204, 255));
-        botonRegresoMenu.setForeground(new java.awt.Color(0, 0, 0));
-        botonRegresoMenu.setText("Regreso al menu");
-        botonRegresoMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonRegresoMenuActionPerformed(evt);
-            }
-        });
+        btnRegresarMenu.setBackground(new java.awt.Color(102, 204, 255));
+        btnRegresarMenu.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegresarMenu.setText("Regresar al menú");
 
         jLabel1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        jLabel1.setText("Tabla de inscripciones");
-
-        jLabel2.setText("ID de inscripcion");
+        jLabel1.setText("Inscripciones");
 
         jLabel3.setText("ID de estudiante");
 
         jLabel4.setText("ID Curso");
 
-        jLabel5.setText("Fecha de inscripcion");
-
-        idInscripcion.setText("26436382");
-
-        IdEstudiante.setText("2827");
-        IdEstudiante.addActionListener(new java.awt.event.ActionListener() {
+        txtIdEstudiante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IdEstudianteActionPerformed(evt);
+                txtIdEstudianteActionPerformed(evt);
             }
         });
 
-        IdCruso.setText("3454552");
-
-        FechaInscripcion.setText("11/9/2003");
-
-        tablaDeInscripcion.setModel(new javax.swing.table.DefaultTableModel(
+        tblInscripciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"gegea", "gaegae", "gawgaew", "rgagrewgea", "9/11/2001"}
+
             },
             new String [] {
-                "Nombre ", "ID Estudiante", "ID incripcion", "ID curso", "fecha de registro"
+                "ID Inscripción", "ID Estudiante", "Nombre Estudiante", "ID curso", "Nombre Curso", "Fecha Inscripción"
             }
         ));
-        tablaDeInscripcion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tablaDeInscripcionMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tablaDeInscripcion);
+        jScrollPane1.setViewportView(tblInscripciones);
 
-        botonAgregarInscripcion.setText("Agregar");
-        botonAgregarInscripcion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregarInscripcionActionPerformed(evt);
-            }
-        });
+        btnCrear.setText("Crear");
 
-        botonEliminarInscripcion.setBackground(new java.awt.Color(255, 51, 51));
-        botonEliminarInscripcion.setForeground(new java.awt.Color(0, 0, 0));
-        botonEliminarInscripcion.setText("Eliminar");
-        botonEliminarInscripcion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminarInscripcionActionPerformed(evt);
-            }
-        });
+        btnEliminar.setBackground(new java.awt.Color(255, 51, 51));
+        btnEliminar.setForeground(new java.awt.Color(0, 0, 0));
+        btnEliminar.setText("Eliminar");
 
-        botonEditarInscripcion.setText("Editar");
-        botonEditarInscripcion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEditarInscripcionActionPerformed(evt);
-            }
-        });
+        btnEditar.setText("Editar");
 
-        BotonTablaIncripciones.setText("Visualizar");
-        BotonTablaIncripciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonTablaIncripcionesActionPerformed(evt);
-            }
-        });
+        btnVisualizar.setText("Visualizar");
 
-        jLabel7.setText("Nombre");
-
-        nombreEstudiante.setText("pepito");
+        btnBuscar.setText("Buscar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -136,212 +85,79 @@ public class VistaInscripciones extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(idInscripcion)
-                                    .addComponent(IdCruso, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(FechaInscripcion, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(IdEstudiante, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(nombreEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(botonAgregarInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21)
-                                .addComponent(botonEditarInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(botonEliminarInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18))
+                        .addComponent(btnRegresarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botonRegresoMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonTablaIncripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtIdEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtIdCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(75, 75, 75)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 227, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(12, 12, 12)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(142, 142, 142))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(714, 714, 714))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(BotonTablaIncripciones, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nombreEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel1)
+                        .addGap(36, 36, 36))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtIdEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4))
+                            .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(idInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(IdEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(IdCruso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FechaInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(58, 58, 58)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(botonEditarInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonEliminarInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonAgregarInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
-                .addComponent(botonRegresoMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(34, 34, 34)
+                                .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtIdCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addComponent(btnRegresarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(88, 88, 88))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonEliminarInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarInscripcionActionPerformed
-         // Boton para Eliminar una Inscripcion
-        //no habra validacion de espacios vacios porque no se pueden agregar lineas con espacios "vacios" en si
-        //instacion del defaultablemodel para poder hacer manipulacion en la jtabla
-         DefaultTableModel tablon = (DefaultTableModel)tablaDeInscripcion.getModel();
-         try{//para evitar problemas usaremos un try catch
-             //el codigo por si solo puede "funcionar" pero genera alertas rojas por tocar una linea en la tabla, una por una
-             //con un try catch evitamos la acumulacion de alertas al punto de congelar la funcion de tocar una linea
-             
-              //selectrowindex es usado para manipular que linea el usuario escoja 
-             int selectedRowIndex = tablaDeInscripcion.getSelectedRow(); 
-             tablon.removeRow(selectedRowIndex);
-             JOptionPane.showMessageDialog(this,"Se ha eliminadoo la inscripcion correctamente");
-             //Se limpian los espacios para nuevas operaciones despues de informar la accion,
-             //en caso de presionar erroneamente Eliminar  se da la ventana de tiempo de ver los datos que borro para apuntarlos y volver a agregarlo
-             nombreEstudiante.setText("");
-         idInscripcion.setText("");
-          IdEstudiante.setText("" );
-           IdCruso.setText("" );
-           FechaInscripcion.setText("");
-             
-         }catch(Exception ex)
-         {
-            //mensaje para indicar que algo no funciono y exploto 
-             //JOptionPane.showMessageDialog(this,"ha fallado la eliminacion de la inscripcion");
-             }
-         
-         
-        
-        
-    }//GEN-LAST:event_botonEliminarInscripcionActionPerformed
-
-    private void botonAgregarInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarInscripcionActionPerformed
-        // Boton para agregar a la base de datos la linea con los datos del nuevo usuario
-        //variables de uso unico para la operacion del if de comprobacion de espacios vacios
-        String nombreEstudiante2=nombreEstudiante.getText();
-        String idInscripcion2=idInscripcion.getText();
-        String IdEstudiante2=IdEstudiante.getText();
-        String IdCruso2=IdCruso.getText();
-        String FechaInscripcion2=FechaInscripcion.getText();
-        //instacion del defaultablemodel para poder agregar a la jtabla la informacion agregada
-         DefaultTableModel tablon = (DefaultTableModel)tablaDeInscripcion.getModel();
-        if(nombreEstudiante2.equals("")||idInscripcion2.equals("")||IdEstudiante2.equals("")||IdCruso2.equals("")||FechaInscripcion2.equals("")){
-         //en caso de uno de los 5 espacios esta ausente no se procedera la operacion
-             JOptionPane.showMessageDialog(this,"No se puede agregar una inscripcion incompleta");
-         }else{//si ningun dato esta vacio:
-          //addRow: agregar la informacion como una linea a la tabla del jframe   
-         tablon.addRow(new Object[]{nombreEstudiante.getText(),idInscripcion.getText(),IdEstudiante.getText(),IdCruso.getText(),FechaInscripcion.getText()});
-        ///////Procedimientos para agregar a la base de datos el nuevo usuario
-        
-        ////////////////////
-         JOptionPane.showMessageDialog(this,"Se ha agregado la inscripcion correctamente");
-        //Se informa del exito para conformidad del usuario
-        //Se limpian los espacion para evitar un error de duplicado de informacion sin consentimiento
-         nombreEstudiante.setText("");
-         idInscripcion.setText("");
-          IdEstudiante.setText("" );
-           IdCruso.setText("" );
-           FechaInscripcion.setText("");
-           
-         }
-        
-        //JOptionPane.showMessageDialog(this,"ha fallado el ingreso de la inscripcion, trate denuevo");
-        
-          
-       
-        
-        
-    }//GEN-LAST:event_botonAgregarInscripcionActionPerformed
-
-    private void botonEditarInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEditarInscripcionActionPerformed
-        // Metodo para editar la fila de la tabla de datos Inscripciones
-        
-        //campo de mensaje
-        //JOptionPane.showMessageDialog(this,"Se ha editado correctamente");
-        //JOptionPane.showMessageDialog(this,"ha fallado la edicion del dato, trate denuevo");
-        //JOptionPane.showMessageDialog(this,"No se puede editar un campo vacio");
-    }//GEN-LAST:event_botonEditarInscripcionActionPerformed
-
-    private void BotonTablaIncripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTablaIncripcionesActionPerformed
-        // Boton para imprimir contenido en la tabla de inscripciones
-        //////////procedimientos
-        String[] linea3 = {"1", "2", "3","4","5"};
-         ///////////
-         //Intanciacion del defaulttablemodel para agregar la informacion a la jtabla
-         DefaultTableModel tablon = (DefaultTableModel)tablaDeInscripcion.getModel();
-        tablon.addRow(linea3);//addRow: agregar la informacion como una linea a la tabla del jframe
-         JOptionPane.showMessageDialog(this,"Se ha activado la tabla de vizualisacion");//opcional
-        //se procura tener los espacios limpios para el usuo del usuario
-        nombreEstudiante.setText("");
-         idInscripcion.setText("");
-          IdEstudiante.setText("" );
-           IdCruso.setText("" );
-           FechaInscripcion.setText("");
-        
-    }//GEN-LAST:event_BotonTablaIncripcionesActionPerformed
-
-    private void botonRegresoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresoMenuActionPerformed
-        // Boton para regresar al menu profesor
-        //--------------->VistaOpcionesProfesor
-        VistaOpcionesProfesor pantalla = new VistaOpcionesProfesor();
-        pantalla.setVisible(true);
-         dispose();
-        setVisible(false);
-    }//GEN-LAST:event_botonRegresoMenuActionPerformed
-
-    private void IdEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdEstudianteActionPerformed
+    private void txtIdEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdEstudianteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_IdEstudianteActionPerformed
-
-    private void tablaDeInscripcionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaDeInscripcionMouseClicked
-         //porcion de codigo para vizualisar en los espacios de textfield la fila seleccionada por un maus del usuario
-        //Para mejor experiencia de usuario cuando seleccione una linea se visualise en los textfields para sea claro cual inscripcion es el que editara o eliminara
-        DefaultTableModel tablon = (DefaultTableModel)tablaDeInscripcion.getModel();
-        
-       try{//para evitar problemas usaremos un try catch
-        int selectedRowIndex = tablaDeInscripcion.getSelectedRow();
-        //el index es RowIndex es la fila donde se presione y el numero es la guia para cual dato de x columna ira al textfield correspondiente
-        nombreEstudiante.setText(tablon.getValueAt (selectedRowIndex,0).toString());
-         idInscripcion.setText(tablon.getValueAt (selectedRowIndex,1).toString() );
-          IdEstudiante.setText(tablon.getValueAt (selectedRowIndex,2).toString() );
-           IdCruso.setText(tablon.getValueAt (selectedRowIndex,3).toString() );
-           FechaInscripcion.setText(tablon.getValueAt (selectedRowIndex,4).toString() );
-          
-           
-       }catch(Exception ex)
-         {
-             }
-    }//GEN-LAST:event_tablaDeInscripcionMouseClicked
+    }//GEN-LAST:event_txtIdEstudianteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -382,23 +198,18 @@ public class VistaInscripciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonTablaIncripciones;
-    private javax.swing.JTextField FechaInscripcion;
-    private javax.swing.JTextField IdCruso;
-    private javax.swing.JTextField IdEstudiante;
-    private javax.swing.JButton botonAgregarInscripcion;
-    private javax.swing.JButton botonEditarInscripcion;
-    private javax.swing.JButton botonEliminarInscripcion;
-    private javax.swing.JButton botonRegresoMenu;
-    private javax.swing.JTextField idInscripcion;
+    public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnCrear;
+    public javax.swing.JButton btnEditar;
+    public javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnRegresarMenu;
+    public javax.swing.JButton btnVisualizar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField nombreEstudiante;
-    private javax.swing.JTable tablaDeInscripcion;
+    public javax.swing.JTable tblInscripciones;
+    public javax.swing.JTextField txtIdCurso;
+    public javax.swing.JTextField txtIdEstudiante;
     // End of variables declaration//GEN-END:variables
 }

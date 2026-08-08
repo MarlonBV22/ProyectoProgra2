@@ -29,174 +29,59 @@ public class VistaInformacionEstudiante extends javax.swing.JFrame {
 
         botonVisorDeCrusosEstudiantes = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TablaVisorDeCursosEstudiante = new javax.swing.JTable();
-        botonRegresoLoggin = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        verNombreEstudiante = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        verCorreoEstudiante = new javax.swing.JTextField();
-        verContraseñaEstudiante = new javax.swing.JTextField();
-        verFechaRegistroEstudiante = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        tblMisCursos = new javax.swing.JTable();
+        btnCerrarSesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         botonVisorDeCrusosEstudiantes.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        botonVisorDeCrusosEstudiantes.setText("Cargar ");
-        botonVisorDeCrusosEstudiantes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonVisorDeCrusosEstudiantesActionPerformed(evt);
-            }
-        });
+        botonVisorDeCrusosEstudiantes.setText("Visualizar");
 
-        TablaVisorDeCursosEstudiante.setModel(new javax.swing.table.DefaultTableModel(
+        tblMisCursos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Curso", "ID", "Profesor", "Descripcion"
+                "ID Inscripción", "ID Estudiante", "Nombre Estudiante", "ID Curso", "Nombre Curso", "Fecha Inscripción"
             }
         ));
-        jScrollPane1.setViewportView(TablaVisorDeCursosEstudiante);
+        jScrollPane1.setViewportView(tblMisCursos);
 
-        botonRegresoLoggin.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        botonRegresoLoggin.setText("Salir");
-        botonRegresoLoggin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonRegresoLogginActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Informacion del estudiante:");
-
-        verNombreEstudiante.setText("*inserte nombre aqui*");
-
-        jLabel3.setText("Correo electronico");
-
-        jLabel4.setText("Contraseña");
-
-        jLabel5.setText("Fecha de registro");
-
-        jLabel6.setText("*solo vista, nada de modificacion*");
+        btnCerrarSesion.setBackground(new java.awt.Color(51, 153, 255));
+        btnCerrarSesion.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnCerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        btnCerrarSesion.setText("Cerrar Sesión");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(270, 270, 270)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65)
-                        .addComponent(verNombreEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(botonRegresoLoggin, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(botonVisorDeCrusosEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(verCorreoEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(59, 59, 59)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(verContraseñaEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(45, 45, 45)
-                                        .addComponent(verFechaRegistroEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 711, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(32, Short.MAX_VALUE))
+                        .addComponent(botonVisorDeCrusosEstudiantes)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 711, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(botonVisorDeCrusosEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonRegresoLoggin, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                            .addComponent(verNombreEstudiante))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(verCorreoEstudiante, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                            .addComponent(verContraseñaEstudiante)
-                            .addComponent(verFechaRegistroEstudiante))))
-                .addGap(45, 45, 45))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonVisorDeCrusosEstudiantes, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(64, 64, 64)
+                .addComponent(btnCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addGap(29, 29, 29))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void botonVisorDeCrusosEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVisorDeCrusosEstudiantesActionPerformed
-       //base para agregar ""1"" fila a la tabla
-       String hola="1";
-        //String[] linea1 = {hola,hola,hola,hola};
-        //String[] linea2 = {hola,hola,hola,hola};
-        String[] linea1 = {hola};
-         String[] linea2 = {hola};
-          String[] linea3 = {hola};
-           String[] linea4 = {hola};
-       // String[] linea3 = {"1", "2", "3","4"};
-        //String[] linea4 = {"1", "2", "3","4"};
-        String[][] linea = {linea1};
-   
-        
-        
-        DefaultTableModel tablon = (DefaultTableModel)TablaVisorDeCursosEstudiante.getModel();
-        tablon.addRow(linea);
-        //tablon.insertRow(tablon.getRowCount(),linea);
-        //tablon.addRow(new Object[]{linea1, linea2,linea3,linea4});
-         //tablon.insertRow(0, new Object[] {linea1, linea2,linea3,linea4});
-       tablon.insertRow(tablon.getRowCount(), new Object[][] {linea1, linea2,linea3,linea4});
-        
-       //espacio para importar la informacion de la base de datos
-       
-       //
-         verNombreEstudiante.setText("Pepito");
-         verCorreoEstudiante.setText("qyehdbhsd127845@Gmail");
-         verContraseñaEstudiante.setText("12345");
-         verFechaRegistroEstudiante.setText("9/11/2001");
-         JOptionPane.showMessageDialog(this,linea);
-       //  TablaVisorDeCursosEstudiante 
-        //no hay espacio para errores de parte del usuario, literal es solo un boton
-    }//GEN-LAST:event_botonVisorDeCrusosEstudiantesActionPerformed
-
-    private void botonRegresoLogginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresoLogginActionPerformed
-        // Boton para regresar al menu de loggeo
-        //visorInformacionEstudiante-------->VistaLogin
-        VistaLogin pantalla =new VistaLogin();
-        pantalla.setVisible(true);
-        dispose();
-        setVisible(false);
-    }//GEN-LAST:event_botonRegresoLogginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,18 +120,9 @@ public class VistaInformacionEstudiante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TablaVisorDeCursosEstudiante;
-    private javax.swing.JButton botonRegresoLoggin;
     private javax.swing.JButton botonVisorDeCrusosEstudiantes;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    public javax.swing.JButton btnCerrarSesion;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField verContraseñaEstudiante;
-    private javax.swing.JTextField verCorreoEstudiante;
-    private javax.swing.JTextField verFechaRegistroEstudiante;
-    private javax.swing.JLabel verNombreEstudiante;
+    public javax.swing.JTable tblMisCursos;
     // End of variables declaration//GEN-END:variables
 }
