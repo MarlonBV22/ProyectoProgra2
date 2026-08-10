@@ -17,7 +17,7 @@ public class UsuarioDAO {
     String sql = "SELECT * FROM usuarios WHERE email = ? AND password = ?";
     
     try (Connection con = Conexion.getConexion();
-         PreparedStatement ps = con.prepareStatement(sql)) { // envia datos a la base de SQL
+        PreparedStatement ps = con.prepareStatement(sql)) { // envia datos a la base de SQL
         
         ps.setString(1, email); // 1 recibe el primer ? 
         ps.setString(2, password);
@@ -30,9 +30,9 @@ public class UsuarioDAO {
                 // Convertimos el TIMESTAMP de MySQL a LocalDateTime de Java
                 java.time.LocalDateTime fechaReg = rs.getObject("fecha_registro", java.time.LocalDateTime.class);
                 
-                // Aplicamos polimorfismo según el rol guardado en MySQL
+                // Aplicamos polimorfismo según el rol guardado en la base SQL
                 if ("ESTUDIANTE".equalsIgnoreCase(rol)) {
-                    // Retornamos un Estudiante, pero viaja "disfrazado" de Usuario
+                    // Retornamos un Estudiante, pero viaja disfrazado de Usuario
                     return new Estudiante(id, nombre, email, password, fechaReg);
                 } else if ("PROFESOR".equalsIgnoreCase(rol)) {
                     // Retornamos un Profesor

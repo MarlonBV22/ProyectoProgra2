@@ -9,20 +9,18 @@ public class Inscripcion {
     private int idEstudiante;
     private int idCurso;
     private LocalDate fechaInscripcion;
-    //contructor sin parametros
-    
+  
     public Inscripcion(){
         
     }
-     //constructor con parametros
+
     public Inscripcion(int idInscripcion, int idEstudiante, int idCurso, LocalDate fechaInscripcion) {
         this.idInscripcion = idInscripcion;
         this.idEstudiante = idEstudiante;
         this.idCurso = idCurso;
         this.fechaInscripcion = fechaInscripcion;
     }
-    //get y set
-
+  
     public int getIdInscripcion() {
         return idInscripcion;
     }

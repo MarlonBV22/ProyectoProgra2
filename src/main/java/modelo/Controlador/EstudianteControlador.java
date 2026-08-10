@@ -14,7 +14,7 @@ import modelo.Usuario;
 import modelo.vistas.VistaInformacionEstudiante;
 import modelo.vistas.VistaLogin;
 
-public class EstudianteController implements ActionListener {
+public class EstudianteControlador implements ActionListener {
 
     private VistaInformacionEstudiante vista;
     private InscripcionDAO inscripcionDao;
@@ -22,7 +22,7 @@ public class EstudianteController implements ActionListener {
     private CursoDAO cursoDao;
     private int idEstudianteLogueado;
 
-    public EstudianteController(VistaInformacionEstudiante vista, InscripcionDAO inscripcionDao, UsuarioDAO usuarioDao, CursoDAO cursoDao, int idEstudiante) {
+    public EstudianteControlador(VistaInformacionEstudiante vista, InscripcionDAO inscripcionDao, UsuarioDAO usuarioDao, CursoDAO cursoDao, int idEstudiante) {
         this.vista = vista;
         this.inscripcionDao = inscripcionDao;
         this.usuarioDao = usuarioDao;
@@ -39,7 +39,7 @@ public class EstudianteController implements ActionListener {
         if (e.getSource() == vista.btnCerrarSesion) {
             VistaLogin login = new VistaLogin();
             UsuarioDAO daoUsuario = new UsuarioDAO();
-            new LoginController(login, daoUsuario);
+            new LoginControlador(login, daoUsuario);
             login.setLocationRelativeTo(null);
             login.setVisible(true);
             vista.dispose();

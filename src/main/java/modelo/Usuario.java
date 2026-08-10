@@ -25,7 +25,7 @@ public abstract class Usuario {
         
     }
     
-// CREACION DE GET Y SET
+// MÉTODOS GET Y SET
     public int getidUsuario() {
         return idUsuario;
     }

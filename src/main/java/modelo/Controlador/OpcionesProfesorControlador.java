@@ -10,11 +10,11 @@ import modelo.vistas.VistaLogin;
 import modelo.vistas.VistaInscripciones;
 import modelo.vistas.VistaUsuarios;
 
-public class OpcionesProfesorController implements ActionListener {
+public class OpcionesProfesorControlador implements ActionListener {
     
     private VistaOpcionesProfesor vista;
 
-    public OpcionesProfesorController(VistaOpcionesProfesor vista) {
+    public OpcionesProfesorControlador(VistaOpcionesProfesor vista) {
         this.vista = vista;
         
         // Conecta los botones directamente
@@ -34,7 +34,7 @@ public class OpcionesProfesorController implements ActionListener {
             modelo.ClasesDAO.UsuarioDAO daoUsuario = new modelo.ClasesDAO.UsuarioDAO(); // Lo inyectamos para las validaciones
 
             // Instanciamos el controlador
-            new modelo.Controlador.CursosController(ventanaCursos, daoCurso, daoUsuario);
+            new modelo.Controlador.CursosControlador(ventanaCursos, daoCurso, daoUsuario);
 
             ventanaCursos.setLocationRelativeTo(null);
             ventanaCursos.setVisible(true);
@@ -50,7 +50,7 @@ public class OpcionesProfesorController implements ActionListener {
             modelo.ClasesDAO.CursoDAO daoCur = new modelo.ClasesDAO.CursoDAO();
 
             // Conectamos el controlador inyectándole todos los accesos necesarios
-            new modelo.Controlador.InscripcionesController(ventanaIns, daoIns, daoUsr, daoCur);
+            new modelo.Controlador.InscripcionesControlador(ventanaIns, daoIns, daoUsr, daoCur);
 
             ventanaIns.setLocationRelativeTo(null);
             ventanaIns.setVisible(true);
@@ -67,7 +67,7 @@ public class OpcionesProfesorController implements ActionListener {
             modelo.ClasesDAO.UsuarioDAO daoUsuarios = new modelo.ClasesDAO.UsuarioDAO();
 
             // 3. Enlazamos la pantalla con su controlador especializado
-            modelo.Controlador.UsuariosController controlUsuarios = new modelo.Controlador.UsuariosController(ventanaUsuarios, daoUsuarios);
+            modelo.Controlador.UsuariosControlador controlUsuarios = new modelo.Controlador.UsuariosControlador(ventanaUsuarios, daoUsuarios);
 
             // 4. Centramos y abrimos la ventana
             ventanaUsuarios.setLocationRelativeTo(null);
@@ -86,8 +86,8 @@ public class OpcionesProfesorController implements ActionListener {
             // 2. Instancia un nuevo UsuarioDAO para el proceso de datos
             modelo.ClasesDAO.UsuarioDAO daoUsuario = new modelo.ClasesDAO.UsuarioDAO();
 
-            // 3. Crea un nuevo LoginController para amarrar la nueva ventana
-            modelo.Controlador.LoginController controlLogin = new modelo.Controlador.LoginController(login, daoUsuario);
+            // 3. Crea un nuevo LoginControlador para amarrar la nueva ventana
+            modelo.Controlador.LoginControlador controlLogin = new modelo.Controlador.LoginControlador(login, daoUsuario);
 
             // 4. Centra y muestra la ventana en pantalla
             login.setLocationRelativeTo(null);

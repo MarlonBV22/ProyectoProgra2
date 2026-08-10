@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 public class Conexion {
     private static final String URL = "jdbc:mysql://localhost:3306/edustream_db";
-    private static final String USER = "root";
-    private static final String PASS = "Mehrunes872";
+    private static final String USER = "root"; // USUARIO
+    private static final String PASS = "Mehrunes872"; // CONTRASEÑA
     
     public static Connection getConexion() throws SQLException {
         try {

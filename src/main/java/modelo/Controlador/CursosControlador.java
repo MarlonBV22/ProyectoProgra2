@@ -14,13 +14,13 @@ import modelo.ClasesDAO.UsuarioDAO;
 import modelo.vistas.VistaCursos;
 import modelo.vistas.VistaOpcionesProfesor;
 
-public class CursosController implements ActionListener {
+public class CursosControlador implements ActionListener {
 
     private VistaCursos vista;
     private CursoDAO cursoDao;
     private UsuarioDAO usuarioDao; // Para validar que el profesor exista en la base de datos
 
-    public CursosController(VistaCursos vista, CursoDAO cursoDao, UsuarioDAO usuarioDao) {
+    public CursosControlador(VistaCursos vista, CursoDAO cursoDao, UsuarioDAO usuarioDao) {
         this.vista = vista;
         this.cursoDao = cursoDao;
         this.usuarioDao = usuarioDao;
@@ -42,7 +42,7 @@ public class CursosController implements ActionListener {
         // Regresar al menú de opciones
         if (e.getSource() == vista.btnRegresarMenu) {
             VistaOpcionesProfesor menu = new VistaOpcionesProfesor();
-            new OpcionesProfesorController(menu);
+            new OpcionesProfesorControlador(menu);
             menu.setLocationRelativeTo(null);
             menu.setVisible(true);
             vista.dispose();
@@ -67,7 +67,7 @@ public class CursosController implements ActionListener {
 
                 // 4. Procesamos el resultado
                 if (cursoEncontrado != null) {
-                    // Si lo encuentra, rellenamos las cajas de texto y el JTextArea de la izquierda
+                    // Si lo encuentra, rellenamos las cajas de texto con la información respectiva
                     vista.txtNombreCurso.setText(cursoEncontrado.getNombreCurso());
                     // Extraemos el ID del profesor
                     vista.txtIdProfesor.setText(String.valueOf(cursoEncontrado.getIdProfesor()));

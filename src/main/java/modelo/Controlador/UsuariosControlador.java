@@ -13,12 +13,12 @@ import modelo.vistas.VistaOpcionesProfesor;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
-public class UsuariosController implements ActionListener {
+public class UsuariosControlador implements ActionListener {
 
     private VistaUsuarios vista;
     private UsuarioDAO usuarioDao;
 
-    public UsuariosController(VistaUsuarios vista, UsuarioDAO usuarioDao) {
+    public UsuariosControlador(VistaUsuarios vista, UsuarioDAO usuarioDao) {
         this.vista = vista;
         this.usuarioDao = usuarioDao;
         
@@ -28,6 +28,8 @@ public class UsuariosController implements ActionListener {
         this.vista.btnVisualizar.addActionListener(this);
         this.vista.btnEditar.addActionListener(this);
         this.vista.btnEliminar.addActionListener(this);
+        
+        cargarTablaUsuarios(); // Carga los usuarios existentes al abrir la pantalla
     }
 
     @Override
@@ -36,7 +38,7 @@ public class UsuariosController implements ActionListener {
         // Botón Regresar al Menú
         if (e.getSource() == vista.btnRegresarMenu) {
             VistaOpcionesProfesor menu = new VistaOpcionesProfesor();
-            OpcionesProfesorController controlMenu = new OpcionesProfesorController(menu);
+            OpcionesProfesorControlador controlMenu = new OpcionesProfesorControlador(menu);
             menu.setLocationRelativeTo(null);
             menu.setVisible(true);
             vista.dispose(); // Cierra el administrador de usuarios

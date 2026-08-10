@@ -11,13 +11,13 @@ import modelo.Usuario;
 import modelo.ClasesDAO.UsuarioDAO;
 import modelo.vistas.VistaLogin;
 
-public class LoginController implements ActionListener {
+public class LoginControlador implements ActionListener {
     
     private VistaLogin vista;
     private UsuarioDAO usuarioDao;
     
     // Constructor: Vincula la interfaz con la base de datos
-    public LoginController(VistaLogin vista, UsuarioDAO usuarioDao) {
+    public LoginControlador(VistaLogin vista, UsuarioDAO usuarioDao) {
         this.vista = vista;
         this.usuarioDao = usuarioDao;
 
@@ -52,7 +52,7 @@ public class LoginController implements ActionListener {
                 return;
             }
 
-            // 3. Consultamos al UsuarioDAO para verificar credenciales en MySQL
+            // 3. Consultamos al UsuarioDAO para verificar credenciales en la base SQL
             Usuario usuarioLogueado = usuarioDao.validarLogin(correo, password);
 
             // 4. Procesamos la respuesta usando Polimorfismo
@@ -63,13 +63,13 @@ public class LoginController implements ActionListener {
                 vista.lblMensaje.setText(""); 
                 vista.dispose(); // Cierra y destruye la ventana de Login
 
-                // Evaluamos con 'instanceof' qué tipo de objeto real llegó
+                // Evaluamos con "instanceof" qué tipo de objeto real llegó
                 if (usuarioLogueado instanceof Profesor) {
                     // 1. Instanciamos la vista del menú del profesor
                     modelo.vistas.VistaOpcionesProfesor menuProfesor = new modelo.vistas.VistaOpcionesProfesor();
     
                     // 2. Instanciamos su respectivo controlador pasándole la vista
-                    modelo.Controlador.OpcionesProfesorController controlMenu = new modelo.Controlador.OpcionesProfesorController(menuProfesor);
+                    modelo.Controlador.OpcionesProfesorControlador controlMenu = new modelo.Controlador.OpcionesProfesorControlador(menuProfesor);
                     
                     // 3. Centramos y mostramos la pantalla
                     menuProfesor.setLocationRelativeTo(null);
@@ -85,7 +85,7 @@ public class LoginController implements ActionListener {
 
                     // 3. Conectamos el controlador del estudiante
                     int idAlumno = usuarioLogueado.getidUsuario();
-                    new modelo.Controlador.EstudianteController(panelAlumno, daoIns, daoUsr, daoCur, idAlumno);
+                    new modelo.Controlador.EstudianteControlador(panelAlumno, daoIns, daoUsr, daoCur, idAlumno);
 
                     // 4. Mostramos centrado el panel del alumno
                     panelAlumno.setLocationRelativeTo(null);

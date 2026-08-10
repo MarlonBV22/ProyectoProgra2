@@ -12,17 +12,18 @@ import modelo.ClasesDAO.UsuarioDAO;
 import modelo.ClasesDAO.CursoDAO;
 import modelo.Usuario;
 import modelo.Curso;
+import modelo.InscripcionDuplicadaException;
 import modelo.vistas.VistaInscripciones;
 import modelo.vistas.VistaOpcionesProfesor;
 
-public class InscripcionesController implements ActionListener {
+public class InscripcionesControlador implements ActionListener {
 
     private VistaInscripciones vista;
     private InscripcionDAO inscripcionDao;
     private UsuarioDAO usuarioDao; // Para verificar que el estudiante exista
     private CursoDAO cursoDao;     // Para verificar que el curso exista
 
-    public InscripcionesController(VistaInscripciones vista, InscripcionDAO inscripcionDao, UsuarioDAO usuarioDao, CursoDAO cursoDao) {
+    public InscripcionesControlador(VistaInscripciones vista, InscripcionDAO inscripcionDao, UsuarioDAO usuarioDao, CursoDAO cursoDao) {
         this.vista = vista;
         this.inscripcionDao = inscripcionDao;
         this.usuarioDao = usuarioDao;
@@ -45,7 +46,7 @@ public class InscripcionesController implements ActionListener {
         // Regresar al menú de opciones
         if (e.getSource() == vista.btnRegresarMenu) {
             VistaOpcionesProfesor menu = new VistaOpcionesProfesor();
-            new OpcionesProfesorController(menu);
+            new OpcionesProfesorControlador(menu);
             menu.setLocationRelativeTo(null);
             menu.setVisible(true);
             vista.dispose();
@@ -97,14 +98,14 @@ public class InscripcionesController implements ActionListener {
                 int idEstudiante = Integer.parseInt(idEstInput);
                 int idCurso = Integer.parseInt(idCurInput);
 
-                // VALIDACIÓN 1: Verificar que el estudiante exista y sea ESTUDIANTE
+                // Validación 1: Verificar que el estudiante exista y sea ESTUDIANTE
                 Usuario estudianteValido = usuarioDao.buscarUsuarioPorId(idEstudiante);
                 if (estudianteValido == null || !"ESTUDIANTE".equalsIgnoreCase(estudianteValido.getRol())) {
                     JOptionPane.showMessageDialog(vista, "Error: El ID ingresado no corresponde a ningún ESTUDIANTE registrado.", "Estudiante Inválido", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
 
-                // VALIDACIÓN 2: Verificar que el curso exista en la base de SQL
+                // Validación 2: Verificar que el curso exista en la base de SQL
                 Curso cursoValido = cursoDao.buscarCursoPorId(idCurso);
                 if (cursoValido == null) {
                     JOptionPane.showMessageDialog(vista, "Error: El ID ingresado no corresponde a ningún CURSO existente.", "Curso Inválido", JOptionPane.ERROR_MESSAGE);
@@ -113,17 +114,22 @@ public class InscripcionesController implements ActionListener {
                 
                 Inscripcion nuevaInscripcion = new Inscripcion(0, idEstudiante, idCurso, LocalDate.now());
 
+                // Intentamos insertar
                 if (inscripcionDao.insertarInscripcion(nuevaInscripcion)) {
                     JOptionPane.showMessageDialog(vista, "¡Estudiante inscrito con éxito en el curso!");
                     limpiarCampos();
-                    cargarTablaInscripciones(); // Refrescar tabla visual
+                    cargarTablaInscripciones(); 
                 } else {
                     JOptionPane.showMessageDialog(vista, "Error al intentar procesar la inscripción.");
                 }
 
-            } catch (NumberFormatException nfe) {
-                JOptionPane.showMessageDialog(vista, "Los IDs deben ser valores numéricos enteros.", "Error de Formato", JOptionPane.ERROR_MESSAGE);
-            }
+                } catch (InscripcionDuplicadaException ide) {
+                    // Si salta la excepción de duplicado, capturamos su mensaje original
+                    JOptionPane.showMessageDialog(vista, ide.getMessage(), "Matrícula Duplicada", JOptionPane.WARNING_MESSAGE);
+
+                } catch (NumberFormatException nfe) {
+                    JOptionPane.showMessageDialog(vista, "Los IDs deben ser valores numéricos enteros", "Error de Formato", JOptionPane.ERROR_MESSAGE);
+                }
         }
 
         // Visualizar / Refrescar la tabla manualmente
