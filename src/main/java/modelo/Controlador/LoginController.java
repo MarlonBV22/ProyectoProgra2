@@ -84,7 +84,8 @@ public class LoginController implements ActionListener {
                     CursoDAO daoCur = new CursoDAO();
 
                     // 3. Conectamos el controlador del estudiante
-                    new modelo.Controlador.EstudianteController(panelAlumno, daoIns, daoUsr, daoCur);
+                    int idAlumno = usuarioLogueado.getidUsuario();
+                    new modelo.Controlador.EstudianteController(panelAlumno, daoIns, daoUsr, daoCur, idAlumno);
 
                     // 4. Mostramos centrado el panel del alumno
                     panelAlumno.setLocationRelativeTo(null);

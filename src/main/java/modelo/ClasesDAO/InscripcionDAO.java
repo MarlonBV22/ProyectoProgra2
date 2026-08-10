@@ -60,6 +60,36 @@ public class InscripcionDAO {
 
         return lista;
     }
+    
+    // Este método nos va a permitir obtener o devolver filas de un alumno en específico
+    public ArrayList<Inscripcion> listarInscripcionesPorEstudiante(int idEstudiante) {
+        
+        ArrayList<Inscripcion> lista = new ArrayList<>();
+        
+        String sql = "SELECT * FROM inscripciones WHERE id_estudiante = ?";
+
+        try (Connection conn = Conexion.getConexion();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, idEstudiante);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Inscripcion inscripcion = new Inscripcion(
+                            rs.getInt("id_inscripcion"),
+                            rs.getInt("id_estudiante"),
+                            rs.getInt("id_curso"),
+                            rs.getDate("fecha_inscripcion").toLocalDate()
+                    );
+                    lista.add(inscripcion);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al filtrar inscripciones del estudiante: " + e.getMessage());
+        }
+        return lista;
+    }
+
 
     public Inscripcion buscarInscripcionPorId(int idInscripcion) {
 
