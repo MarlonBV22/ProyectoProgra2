@@ -35,13 +35,14 @@ public class CursoDAO {
 
         ArrayList<Curso> lista = new ArrayList<>();
 
-        String sql = "SELECT * FROM cursos";
+        String sql = "SELECT * FROM cursos"; //traiga todo el registro de datos
 
         try (Connection conn = Conexion.getConexion();
              PreparedStatement ps = conn.prepareStatement(sql);
-             ResultSet rs = ps.executeQuery()) {
+             ResultSet rs = ps.executeQuery()) { //query se usa para el select
 
             while (rs.next()) {
+                
 
                 Curso curso = new Curso(
                         rs.getInt("id_curso"),
@@ -71,7 +72,7 @@ public class CursoDAO {
 
             try (ResultSet rs = ps.executeQuery()) {
 
-                if (rs.next()) {
+                if (rs.next()) {// se encontro una fila?
 
                     return new Curso(
                             rs.getInt("id_curso"),
